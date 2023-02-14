@@ -7,6 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C548358E299133A000B52FE3 /* JobListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C548358D299133A000B52FE3 /* JobListView.swift */; };
+		C548359129924D8500B52FE3 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = C548359029924D8500B52FE3 /* Job.swift */; };
+		C54835932992998D00B52FE3 /* Fingering.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835922992998C00B52FE3 /* Fingering.swift */; };
+		C54835952992A1C900B52FE3 /* NoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835942992A1C900B52FE3 /* NoteStore.swift */; };
+		C54835972992A21400B52FE3 /* Clef.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835962992A21400B52FE3 /* Clef.swift */; };
+		C54835992992F72D00B52FE3 /* Accidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835982992F72D00B52FE3 /* Accidental.swift */; };
+		C548359B2992FAD000B52FE3 /* NoteFormationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C548359A2992FAD000B52FE3 /* NoteFormationData.swift */; };
+		C548359D2993042800B52FE3 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = C548359C2993042800B52FE3 /* Note.swift */; };
+		C548359F2993C65B00B52FE3 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C548359E2993C65B00B52FE3 /* Instrument.swift */; };
+		C54835A12993C7AD00B52FE3 /* FingeringOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835A02993C7AD00B52FE3 /* FingeringOptions.swift */; };
+		C54835A32993DBE500B52FE3 /* NoteByNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835A22993DBE500B52FE3 /* NoteByNum.swift */; };
+		C54835A52994137E00B52FE3 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835A42994137E00B52FE3 /* DataController.swift */; };
+		C54835A72995AE7E00B52FE3 /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835A62995AE7E00B52FE3 /* ErrorWrapper.swift */; };
+		C54835A92995AEBB00B52FE3 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835A82995AEBB00B52FE3 /* ErrorView.swift */; };
+		C54835B52997D5F000B52FE3 /* NoteDisplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835B42997D5F000B52FE3 /* NoteDisplayScene.swift */; };
+		C54835B72997D68A00B52FE3 /* SpriteTestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835B62997D68A00B52FE3 /* SpriteTestScene.swift */; };
+		C54835B92998416F00B52FE3 /* SpriteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835B82998416F00B52FE3 /* SpriteData.swift */; };
+		C54835BB2998D7FD00B52FE3 /* NoteDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835BA2998D7FD00B52FE3 /* NoteDisplayView.swift */; };
+		C54835BD29994E2600B52FE3 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835BC29994E2600B52FE3 /* HomeScreenView.swift */; };
+		C54835C3299ACBA300B52FE3 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = C54835C2299ACBA300B52FE3 /* AudioKit */; };
+		C54835C5299ACDDA00B52FE3 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835C4299ACDDA00B52FE3 /* AudioController.swift */; };
+		C54835C7299ACE7900B52FE3 /* PlayedNoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835C6299ACE7900B52FE3 /* PlayedNoteData.swift */; };
+		C54835CA299ACFF400B52FE3 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = C54835C9299ACFF400B52FE3 /* AudioKitEX */; };
+		C54835CD299AD03600B52FE3 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = C54835CC299AD03600B52FE3 /* SoundpipeAudioKit */; };
 		C569A32E299130A700E99884 /* FarkasJrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569A32D299130A700E99884 /* FarkasJrApp.swift */; };
 		C569A330299130A700E99884 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569A32F299130A700E99884 /* ContentView.swift */; };
 		C569A332299130A900E99884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569A331299130A900E99884 /* Assets.xcassets */; };
@@ -14,6 +38,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C548358D299133A000B52FE3 /* JobListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListView.swift; sourceTree = "<group>"; };
+		C548359029924D8500B52FE3 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		C54835922992998C00B52FE3 /* Fingering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fingering.swift; sourceTree = "<group>"; };
+		C54835942992A1C900B52FE3 /* NoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStore.swift; sourceTree = "<group>"; };
+		C54835962992A21400B52FE3 /* Clef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clef.swift; sourceTree = "<group>"; };
+		C54835982992F72D00B52FE3 /* Accidental.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accidental.swift; sourceTree = "<group>"; };
+		C548359A2992FAD000B52FE3 /* NoteFormationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteFormationData.swift; sourceTree = "<group>"; };
+		C548359C2993042800B52FE3 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		C548359E2993C65B00B52FE3 /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
+		C54835A02993C7AD00B52FE3 /* FingeringOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingeringOptions.swift; sourceTree = "<group>"; };
+		C54835A22993DBE500B52FE3 /* NoteByNum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteByNum.swift; sourceTree = "<group>"; };
+		C54835A42994137E00B52FE3 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		C54835A62995AE7E00B52FE3 /* ErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
+		C54835A82995AEBB00B52FE3 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		C54835B42997D5F000B52FE3 /* NoteDisplayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDisplayScene.swift; sourceTree = "<group>"; };
+		C54835B62997D68A00B52FE3 /* SpriteTestScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteTestScene.swift; sourceTree = "<group>"; };
+		C54835B82998416F00B52FE3 /* SpriteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteData.swift; sourceTree = "<group>"; };
+		C54835BA2998D7FD00B52FE3 /* NoteDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDisplayView.swift; sourceTree = "<group>"; };
+		C54835BC29994E2600B52FE3 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		C54835C4299ACDDA00B52FE3 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		C54835C6299ACE7900B52FE3 /* PlayedNoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedNoteData.swift; sourceTree = "<group>"; };
 		C569A32A299130A700E99884 /* FarkasJr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarkasJr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C569A32D299130A700E99884 /* FarkasJrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarkasJrApp.swift; sourceTree = "<group>"; };
 		C569A32F299130A700E99884 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,12 +71,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C54835C3299ACBA300B52FE3 /* AudioKit in Frameworks */,
+				C54835CA299ACFF400B52FE3 /* AudioKitEX in Frameworks */,
+				C54835CD299AD03600B52FE3 /* SoundpipeAudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C548358F29924D7300B52FE3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C548359029924D8500B52FE3 /* Job.swift */,
+				C54835922992998C00B52FE3 /* Fingering.swift */,
+				C54835942992A1C900B52FE3 /* NoteStore.swift */,
+				C54835962992A21400B52FE3 /* Clef.swift */,
+				C54835982992F72D00B52FE3 /* Accidental.swift */,
+				C548359A2992FAD000B52FE3 /* NoteFormationData.swift */,
+				C548359C2993042800B52FE3 /* Note.swift */,
+				C548359E2993C65B00B52FE3 /* Instrument.swift */,
+				C54835A02993C7AD00B52FE3 /* FingeringOptions.swift */,
+				C54835A22993DBE500B52FE3 /* NoteByNum.swift */,
+				C54835A42994137E00B52FE3 /* DataController.swift */,
+				C54835A62995AE7E00B52FE3 /* ErrorWrapper.swift */,
+				C54835B82998416F00B52FE3 /* SpriteData.swift */,
+				C54835C6299ACE7900B52FE3 /* PlayedNoteData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C54835AA2997CB7100B52FE3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C54835B42997D5F000B52FE3 /* NoteDisplayScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C54835B32997D54400B52FE3 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sprites;
+			sourceTree = "<group>";
+		};
 		C569A321299130A700E99884 = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +135,19 @@
 		C569A32C299130A700E99884 /* FarkasJr */ = {
 			isa = PBXGroup;
 			children = (
+				C54835B32997D54400B52FE3 /* Sprites */,
+				C54835AA2997CB7100B52FE3 /* Scenes */,
+				C548358F29924D7300B52FE3 /* Models */,
 				C569A32D299130A700E99884 /* FarkasJrApp.swift */,
 				C569A32F299130A700E99884 /* ContentView.swift */,
 				C569A331299130A900E99884 /* Assets.xcassets */,
 				C569A333299130A900E99884 /* Preview Content */,
+				C548358D299133A000B52FE3 /* JobListView.swift */,
+				C54835A82995AEBB00B52FE3 /* ErrorView.swift */,
+				C54835B62997D68A00B52FE3 /* SpriteTestScene.swift */,
+				C54835BA2998D7FD00B52FE3 /* NoteDisplayView.swift */,
+				C54835BC29994E2600B52FE3 /* HomeScreenView.swift */,
+				C54835C4299ACDDA00B52FE3 /* AudioController.swift */,
 			);
 			path = FarkasJr;
 			sourceTree = "<group>";
@@ -83,6 +176,11 @@
 			dependencies = (
 			);
 			name = FarkasJr;
+			packageProductDependencies = (
+				C54835C2299ACBA300B52FE3 /* AudioKit */,
+				C54835C9299ACFF400B52FE3 /* AudioKitEX */,
+				C54835CC299AD03600B52FE3 /* SoundpipeAudioKit */,
+			);
 			productName = FarkasJr;
 			productReference = C569A32A299130A700E99884 /* FarkasJr.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +209,11 @@
 				Base,
 			);
 			mainGroup = C569A321299130A700E99884;
+			packageReferences = (
+				C54835C1299ACBA300B52FE3 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				C54835C8299ACFF400B52FE3 /* XCRemoteSwiftPackageReference "AudioKitEX" */,
+				C54835CB299AD03600B52FE3 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
+			);
 			productRefGroup = C569A32B299130A700E99884 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +240,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C54835C5299ACDDA00B52FE3 /* AudioController.swift in Sources */,
+				C54835A32993DBE500B52FE3 /* NoteByNum.swift in Sources */,
 				C569A330299130A700E99884 /* ContentView.swift in Sources */,
 				C569A32E299130A700E99884 /* FarkasJrApp.swift in Sources */,
+				C54835B92998416F00B52FE3 /* SpriteData.swift in Sources */,
+				C54835A72995AE7E00B52FE3 /* ErrorWrapper.swift in Sources */,
+				C54835C7299ACE7900B52FE3 /* PlayedNoteData.swift in Sources */,
+				C54835972992A21400B52FE3 /* Clef.swift in Sources */,
+				C548359B2992FAD000B52FE3 /* NoteFormationData.swift in Sources */,
+				C54835992992F72D00B52FE3 /* Accidental.swift in Sources */,
+				C548359D2993042800B52FE3 /* Note.swift in Sources */,
+				C54835A52994137E00B52FE3 /* DataController.swift in Sources */,
+				C548358E299133A000B52FE3 /* JobListView.swift in Sources */,
+				C54835952992A1C900B52FE3 /* NoteStore.swift in Sources */,
+				C54835BD29994E2600B52FE3 /* HomeScreenView.swift in Sources */,
+				C54835B52997D5F000B52FE3 /* NoteDisplayScene.swift in Sources */,
+				C548359F2993C65B00B52FE3 /* Instrument.swift in Sources */,
+				C54835932992998D00B52FE3 /* Fingering.swift in Sources */,
+				C54835B72997D68A00B52FE3 /* SpriteTestScene.swift in Sources */,
+				C54835A12993C7AD00B52FE3 /* FingeringOptions.swift in Sources */,
+				C548359129924D8500B52FE3 /* Job.swift in Sources */,
+				C54835A92995AEBB00B52FE3 /* ErrorView.swift in Sources */,
+				C54835BB2998D7FD00B52FE3 /* NoteDisplayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +394,13 @@
 				DEVELOPMENT_TEAM = V4DPA4RA3P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We use the microphone to analyse the your playing. Audio is always discarded after analysis.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +425,13 @@
 				DEVELOPMENT_TEAM = V4DPA4RA3P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We use the microphone to analyse the your playing. Audio is always discarded after analysis.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +467,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C54835C1299ACBA300B52FE3 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		C54835C8299ACFF400B52FE3 /* XCRemoteSwiftPackageReference "AudioKitEX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKitEX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		C54835CB299AD03600B52FE3 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C54835C2299ACBA300B52FE3 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C54835C1299ACBA300B52FE3 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		C54835C9299ACFF400B52FE3 /* AudioKitEX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C54835C8299ACFF400B52FE3 /* XCRemoteSwiftPackageReference "AudioKitEX" */;
+			productName = AudioKitEX;
+		};
+		C54835CC299AD03600B52FE3 /* SoundpipeAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C54835CB299AD03600B52FE3 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
+			productName = SoundpipeAudioKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C569A322299130A700E99884 /* Project object */;
 }
