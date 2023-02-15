@@ -20,8 +20,16 @@ struct Instrument: Codable, Identifiable {
         var notesToReturn = [Note]()
         for nbn in self.notes {
             for note in nbn.notes {
-                if note.isActive {notesToReturn.append(note)}
+                if note.isActive { notesToReturn.append(note) }
             }
+        }
+        return notesToReturn
+    }
+    
+    var allNotes: [Note] {
+        var notesToReturn = [Note]()
+        for nbn in self.notes {
+            for note in nbn.notes { notesToReturn.append(note) }
         }
         return notesToReturn
     }
@@ -54,4 +62,5 @@ extension Instrument {
         ],
         clef: .treble)
     }
+    static var initialData: [Instrument] = [.hornF]
 }

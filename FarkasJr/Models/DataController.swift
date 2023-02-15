@@ -20,15 +20,14 @@ class DataController: ObservableObject {
         .appendingPathComponent("instrument.data")
     }
     
-    
     static func load() async throws -> [Instrument] {
         try await withCheckedThrowingContinuation({ continuation in
             load { result in
                 switch result {
                 case .failure(let error):
                     continuation.resume(throwing: error)
-                case .success(let scrums):
-                    continuation.resume(returning: scrums)
+                case .success(let instruments):
+                    continuation.resume(returning: instruments)
                 }
             }
         })
@@ -41,15 +40,15 @@ class DataController: ObservableObject {
                 let fileUrl = try fileURL()
                 guard let file = try? FileHandle(forReadingFrom: fileUrl) else {
                     DispatchQueue.main.async {
-                        print("Returned Empty [Instrument]")
-                        completion(.success([]))
+                        print("Returned First Load Data")
+                        completion(.success(Instrument.initialData)) // This is where we load the initial instruments.
                     }
                     return
                 }
-                let dailyScrums = try JSONDecoder().decode([Instrument].self, from: file.availableData)
+                let instruments = try JSONDecoder().decode([Instrument].self, from: file.availableData)
                 DispatchQueue.main.async {
                     print("Files Available")
-                    completion(.success(dailyScrums))
+                    completion(.success(instruments))
                 }
             } catch  {
                 DispatchQueue.main.async {
@@ -58,6 +57,7 @@ class DataController: ObservableObject {
             }
         }
     }
+    
     @discardableResult
     static func save(instruments: [Instrument]) async throws -> Int {
         try await withCheckedThrowingContinuation({ continuation in

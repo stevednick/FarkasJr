@@ -35,6 +35,7 @@
 		C569A330299130A700E99884 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569A32F299130A700E99884 /* ContentView.swift */; };
 		C569A332299130A900E99884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569A331299130A900E99884 /* Assets.xcassets */; };
 		C569A335299130A900E99884 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569A334299130A900E99884 /* Preview Assets.xcassets */; };
+		C5F4DEF6299D1D340099D2FB /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F4DEF5299D1D340099D2FB /* GameData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		C569A32F299130A700E99884 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C569A331299130A900E99884 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C569A334299130A900E99884 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C5F4DEF5299D1D340099D2FB /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				C54835A62995AE7E00B52FE3 /* ErrorWrapper.swift */,
 				C54835B82998416F00B52FE3 /* SpriteData.swift */,
 				C54835C6299ACE7900B52FE3 /* PlayedNoteData.swift */,
+				C5F4DEF5299D1D340099D2FB /* GameData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -107,13 +110,6 @@
 				C54835B42997D5F000B52FE3 /* NoteDisplayScene.swift */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		C54835B32997D54400B52FE3 /* Sprites */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sprites;
 			sourceTree = "<group>";
 		};
 		C569A321299130A700E99884 = {
@@ -135,7 +131,6 @@
 		C569A32C299130A700E99884 /* FarkasJr */ = {
 			isa = PBXGroup;
 			children = (
-				C54835B32997D54400B52FE3 /* Sprites */,
 				C54835AA2997CB7100B52FE3 /* Scenes */,
 				C548358F29924D7300B52FE3 /* Models */,
 				C569A32D299130A700E99884 /* FarkasJrApp.swift */,
@@ -253,6 +248,7 @@
 				C548359D2993042800B52FE3 /* Note.swift in Sources */,
 				C54835A52994137E00B52FE3 /* DataController.swift in Sources */,
 				C548358E299133A000B52FE3 /* JobListView.swift in Sources */,
+				C5F4DEF6299D1D340099D2FB /* GameData.swift in Sources */,
 				C54835952992A1C900B52FE3 /* NoteStore.swift in Sources */,
 				C54835BD29994E2600B52FE3 /* HomeScreenView.swift in Sources */,
 				C54835B52997D5F000B52FE3 /* NoteDisplayScene.swift in Sources */,
@@ -400,12 +396,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.weststreetgamestudios.FarkasJr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -431,12 +428,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.weststreetgamestudios.FarkasJr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

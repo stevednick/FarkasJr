@@ -25,14 +25,6 @@ struct FarkasJrApp: App {
                             errorWrapper = ErrorWrapper(error: error, guidance: "Try again later.")
                         }
                     }
-                } resetAction: {
-                    Task {
-                        do {
-                            try await DataController.save(instruments: [Instrument.hornF])
-                        } catch {
-                            errorWrapper = ErrorWrapper(error: error, guidance: "Try again later.")
-                        }
-                    }
                 }
             }
             .task {
@@ -40,11 +32,7 @@ struct FarkasJrApp: App {
                     dataController.instruments = try await DataController.load()
                 } catch {
                     errorWrapper = ErrorWrapper(error: error, guidance: "Farkas Jr will load sample data and continue.")
-                    do {
-                        try await DataController.save(instruments: [Instrument.hornF])
-                    } catch {
-                        errorWrapper = ErrorWrapper(error: error, guidance: "Try again later.")
-                    }
+                    dataController.instruments = Instrument.initialData
                 }
             }
             .sheet(item: $errorWrapper, onDismiss: {

@@ -7,14 +7,23 @@
 
 import Foundation
 
+struct NoteWithTuning {
+    let num: Int
+    let tuning: Float
+}
+
 struct PlayedNoteData {
     
-    let CFrequency: Float = 256.0
+    let AFrequency: Float = 440.0
     var frequency: Float = 0
     var amp: Float = 0
     
     var num: Float {
-        let ratio = frequency/CFrequency
-        return 12.0 * log2(ratio)
+        let ratio = frequency/AFrequency
+        return (12.0 * log2(ratio)) + 9
     }
+    var noteWithTuning: NoteWithTuning {
+        return NoteWithTuning(num: Int(round(num)), tuning: num - round(num))
+    }
+    
 }

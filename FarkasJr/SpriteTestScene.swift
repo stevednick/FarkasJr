@@ -16,7 +16,7 @@ struct SpriteTestScene: View {
     var body: some View {
         VStack{
             List {
-                ForEach(instrument.notes) { noteByNum in
+                ForEach(instrument.notes.reversed()) { noteByNum in
                     ForEach(noteByNum.notes) { note in
                         NoteDisplayView(note: note, instrument: instrument, size: sceneSize)
                     }

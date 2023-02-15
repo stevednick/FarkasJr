@@ -57,15 +57,27 @@ class AudioController: ObservableObject {
                 self.update(pitch[0], amp[0])
             }
         }
-        tracker.start()
+        start()
+    }
+    
+    func start() {
+        do {
+            try engine.start()
+            tracker.start()
+        } catch let err {
+            Log(err)
+        }
+    }
+    
+    func shutDown() {
+        engine.stop()
     }
     
     func update(_ pitch: AUValue, _ amp: AUValue) {
-        
         guard amp > 0.1 else { return }
         data.frequency = pitch
         data.amp = amp
-        
+        //print(data.noteWithTuning)
     }
     
 }

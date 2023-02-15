@@ -11,18 +11,13 @@ struct HomeScreenView: View {
     
     @Binding var instruments: [Instrument]
     let saveAction: () -> Void
-    let resetAction: () -> Void
-    @State var reloadToggle: Bool = false
     
     var body: some View {
         
         VStack {
-            Button("Reset") {
-                resetAction()
-                reloadToggle.toggle()
-            }
             List {
                 ForEach($instruments) { $instrument in
+                    Text(instrument.name)
                     ForEach($instrument.notes) { $noteByNum in
                         ForEach($noteByNum.notes) { $note in
                             HStack {
@@ -36,8 +31,6 @@ struct HomeScreenView: View {
                                 }
                                 .foregroundColor(.blue)
                             }
-                            
-                            
                         }
                     }
                 }
@@ -48,6 +41,6 @@ struct HomeScreenView: View {
 
 struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreenView(instruments: .constant([Instrument.hornF]), saveAction: {}, resetAction: {})
+        HomeScreenView(instruments: .constant([Instrument.hornF]), saveAction: {})
     }
 }

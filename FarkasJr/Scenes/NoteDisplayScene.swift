@@ -10,9 +10,9 @@ import SpriteKit
 
 class NoteDisplayScene: SKScene {
     
-    let lineWidth = 1
-    let lineGap: CGFloat = 25 // This value scales everything else!
-    let width = 300
+    let lineWidth = 2.0
+    let lineGap: CGFloat = 25.0 // This value scales everything else!
+    let width = 300.0
     var clef: Clef = .treble
     var clefXCoordinate: CGFloat { -3 * lineGap }
     var noteXCoordinate: CGFloat { lineGap * 2 }
@@ -43,7 +43,7 @@ class NoteDisplayScene: SKScene {
     
     func displayStave() {
         for i in -2...2 {
-            drawLine(rect: CGRect(x: -width/2, y: Int(CGFloat(i) * lineGap), width: width, height: lineWidth))
+            drawLine(rect: CGRect(x: -width/2.0, y: CGFloat(i) * lineGap, width: width, height: lineWidth))
         }
     }
     
@@ -70,9 +70,9 @@ class NoteDisplayScene: SKScene {
         
         for i in stride(from: 6, to: abs(note.pos) + 1, by: 2) {
             drawLine(rect: CGRect(
-                x: Int(noteXCoordinate + xOffset - CGFloat((ledgerLineWidth/2))),
-                y: Int(CGFloat(i) * lineGap  * (note.pos < 0 ? -0.5 : 0.5)),
-                width: Int(ledgerLineWidth),
+                x: noteXCoordinate + xOffset - CGFloat((ledgerLineWidth/2)),
+                y: CGFloat(i) * lineGap  * (note.pos < 0 ? -0.5 : 0.5),
+                width: ledgerLineWidth,
                 height: lineWidth))
         }
     }
@@ -99,6 +99,6 @@ class NoteDisplayScene: SKScene {
 
 extension SpriteData {
     static var crotchet: SpriteData {
-        SpriteData(imageName: "crotchet", size: CGSize(width: 1.1, height: 3.98), yPosition: 1.51)
+        SpriteData(imageName: "crotchet", size: CGSize(width: 1.2, height: 4), yPosition: 1.51)
     }
 }
