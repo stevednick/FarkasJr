@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SpriteData: Codable {
+struct SpriteData: Codable{
     
     let imageName: String
     let size: CGSize

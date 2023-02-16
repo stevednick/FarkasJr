@@ -10,7 +10,7 @@ import SwiftUI
 
 class DataController: ObservableObject {
     
-    @Published var instruments: [Instrument] = []
+    @Published var instruments: [Instrument] = Instrument.initialData
     
     private static func fileURL() throws -> URL {
         try FileManager.default.url(for: .documentDirectory,

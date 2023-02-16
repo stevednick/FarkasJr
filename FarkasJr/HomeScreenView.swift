@@ -10,37 +10,53 @@ import SwiftUI
 struct HomeScreenView: View {
     
     @Binding var instruments: [Instrument]
+    @State private var currentInstrument: Int = GameData.currentInstrument
+    
+    
     let saveAction: () -> Void
+    let resetAction: () -> Void
+    @State var gameDuration = Float(GameData.gameDuration)
     
     var body: some View {
-        
         VStack {
-            List {
-                ForEach($instruments) { $instrument in
-                    Text(instrument.name)
-                    ForEach($instrument.notes) { $noteByNum in
-                        ForEach($noteByNum.notes) { $note in
-                            HStack {
-                                NoteDisplayView(note: note, instrument: instrument, size: CGSize(width: 100, height: 70))
-                                Spacer()
-                                Text(note.name)
-                                Spacer()
-                                Button(note.isActive ? "Active" : "Off") {
-                                    note.isActive.toggle()
-                                    saveAction()
-                                }
-                                .foregroundColor(.blue)
-                            }
-                        }
-                    }
+            Button("Reset Instrument Data") {
+                resetAction()
+                saveAction()
+            }
+            .padding()
+            Picker("Select an Instrument", selection: $currentInstrument) {
+                ForEach(instruments.indices, id: \.self) { index in
+                    Text(instruments[index].name).tag(index)
                 }
             }
+            .onChange(of: currentInstrument) { newValue in
+                GameData.currentInstrument = newValue
+            }
+            Spacer()
+            NoteDisplayView(note: instruments[currentInstrument].notes.randomElement()?.notes.randomElement() ?? Note(name: "", num: 0, pos: 0, accidental: .natural, level: 0), instrument: .hornF, size: CGSize(width: 200, height: 133))
+            Spacer()
+            Button(action: {}) {
+                Text("Start!")
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color(.white))
+                    .padding(30)
+                    .font(.largeTitle)
+                    .background(.black)
+                    .cornerRadius(10)
+            }
+            Spacer()
+            Slider(value: $gameDuration, in: 1...20) { _ in
+                GameData.gameDuration = Int(self.gameDuration)
+            }
+            .padding(.horizontal, 30.0)
+            Text("Game Length: \(Int(gameDuration)) Note\(Int(gameDuration) == 1 ? "" : "s")")
+            Spacer()
         }
     }
 }
 
 struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreenView(instruments: .constant([Instrument.hornF]), saveAction: {})
+        HomeScreenView(instruments: .constant([Instrument.hornF]), saveAction: {}, resetAction: {})
     }
 }

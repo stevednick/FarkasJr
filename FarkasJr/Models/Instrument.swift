@@ -34,6 +34,16 @@ struct Instrument: Codable, Identifiable {
         return notesToReturn
     }
     
+    var availableFingerings: [Fingering] {
+        var fingeringsToReturn = [Fingering]()
+        for note in activeNotes {
+            if let fingeringToAdd = fingeringOptions.first(where: {$0.num == note.num})?.preferredFingerings[0] {
+                fingeringsToReturn.append(fingeringToAdd)
+            }
+        }
+        return fingeringsToReturn
+    }
+    
     init(id: UUID = UUID(), name: String, transposition: Int, fingeringOptions: [FingeringOptions], clef: Clef) {
         self.id = id
         self.name = name
@@ -62,5 +72,18 @@ extension Instrument {
         ],
         clef: .treble)
     }
-    static var initialData: [Instrument] = [.hornF]
+    static var hornBb: Instrument {
+        return Instrument(name: "Bb Horn", transposition: 7, fingeringOptions: [
+        FingeringOptions(num: 0, preferredFingerings: [Fingering(fingers: [false, false, false])]), // Middle C
+        FingeringOptions(num: 1, preferredFingerings: [Fingering(fingers: [true, true, false])]), // C#
+        FingeringOptions(num: 2, preferredFingerings: [Fingering(fingers: [true, false, false])]), // D
+        FingeringOptions(num: 3, preferredFingerings: [Fingering(fingers: [false, true, false])]), // Eb
+        FingeringOptions(num: 4, preferredFingerings: [Fingering(fingers: [false, false, false]), Fingering(fingers: [true, true, false])]), // E 1&2 added for testing.
+        FingeringOptions(num: 5, preferredFingerings: [Fingering(fingers: [true, false, false])]), // F
+        FingeringOptions(num: 6, preferredFingerings: [Fingering(fingers: [false, true, false])]), // F#
+        FingeringOptions(num: 7, preferredFingerings: [Fingering(fingers: [false, false, false])])
+        ],
+        clef: .treble)
+    }
+    static var initialData: [Instrument] = [.hornF, .hornBb]
 }

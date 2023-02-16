@@ -14,9 +14,9 @@ class NoteDisplayScene: SKScene {
     let lineGap: CGFloat = 25.0 // This value scales everything else!
     let width = 300.0
     var clef: Clef = .treble
-    var clefXCoordinate: CGFloat { -3 * lineGap }
+    var clefXCoordinate: CGFloat { lineGap * -3 }
     var noteXCoordinate: CGFloat { lineGap * 2 }
-    var accidentalOffset: CGFloat { -lineGap * 1.6 }
+    var accidentalOffset: CGFloat { lineGap * -1.6 }
     var note: Note = Note(name: "", num: 3, pos: -1, accidental: .flat, level: 0)
     var noteOffset: CGFloat { lineGap * CGFloat(note.pos) / 2.0 }
     

@@ -9,25 +9,33 @@ import Foundation
 
 struct GameData {
     
-    struct Keys {
-        static let currentInstrument = "currentInstrument"
-        static let gameDuration = "gameDuration"
-    }
+    @UserDefault("currentInstrument", defaultValue: 0)
+    static var currentInstrument: Int
     
-    var currentInstrument: Instrument
-    var gameDuration: Int
+    @UserDefault("gameDuration", defaultValue: 10)
+    static var gameDuration: Int
+    
+    @UserDefault("firstStartComplete", defaultValue: false)
+    static var firstStartComplete: Bool
+    
+}
 
-    init(currentInstrument: Instrument, gameDuration: Int) {
-        self.currentInstrument = currentInstrument
-        self.gameDuration = gameDuration
+@propertyWrapper
+struct UserDefault<T> {
+    let key: String
+    let defaultValue: T
+    
+    init(_ key: String, defaultValue: T) {
+        self.key = key
+        self.defaultValue = defaultValue
     }
     
-    static var currentInstrument: Int {
-      get { return UserDefaults.standard.integer(forKey: Keys.currentInstrument) }
-      set { UserDefaults.standard.set(newValue, forKey: Keys.currentInstrument) }
-    }
-    static var gameDuration: Int {
-      get { return UserDefaults.standard.integer(forKey: Keys.gameDuration) } // Deal with first start. 
-      set { UserDefaults.standard.set(newValue, forKey: Keys.gameDuration) }
+    var wrappedValue: T {
+        get {
+            return UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: key)
+        }
     }
 }

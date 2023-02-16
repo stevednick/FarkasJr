@@ -13,6 +13,7 @@ struct FarkasJrApp: App {
     @StateObject private var dataController = DataController()
     @State private var errorWrapper: ErrorWrapper?
     @StateObject private var audioController = AudioController()
+    @State private var firstStart = !GameData.firstStartComplete
     
     var body: some Scene {
         WindowGroup {
@@ -25,6 +26,8 @@ struct FarkasJrApp: App {
                             errorWrapper = ErrorWrapper(error: error, guidance: "Try again later.")
                         }
                     }
+                } resetAction: {
+                    dataController.instruments = Instrument.initialData
                 }
             }
             .task {
@@ -41,6 +44,11 @@ struct FarkasJrApp: App {
             }) { wrapper in
                 ErrorView(errorWrapper: wrapper)
             }
+            .sheet(isPresented: $firstStart, onDismiss: {
+                GameData.firstStartComplete = true
+            }, content: {
+                WelcomeView()
+            })
         }
     }
 }
