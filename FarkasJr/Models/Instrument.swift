@@ -37,11 +37,9 @@ struct Instrument: Codable, Identifiable {
     var availableFingerings: [Fingering] {
         var fingeringsToReturn = [Fingering]()
         for note in activeNotes {
-            if let fingeringToAdd = fingeringOptions.first(where: {$0.num == note.num})?.preferredFingerings[0] {
-                fingeringsToReturn.append(fingeringToAdd)
-            }
+            fingeringsToReturn += fingeringOptions[note.num].preferredFingerings
         }
-        return fingeringsToReturn
+        return Array(Set(fingeringsToReturn))
     }
     
     init(id: UUID = UUID(), name: String, transposition: Int, fingeringOptions: [FingeringOptions], clef: Clef) {
@@ -51,6 +49,7 @@ struct Instrument: Codable, Identifiable {
         self.fingeringOptions = fingeringOptions
         self.clef = clef
         self.notes = getNoteList()
+        print(availableFingerings)
     }
     
     func getNoteList() -> [NoteByNum]{
@@ -61,27 +60,27 @@ struct Instrument: Codable, Identifiable {
 extension Instrument {
     static var hornF: Instrument {
         return Instrument(name: "F Horn", transposition: 7, fingeringOptions: [
-        FingeringOptions(num: 0, preferredFingerings: [Fingering(fingers: [false, false, false])]), // Middle C
-        FingeringOptions(num: 1, preferredFingerings: [Fingering(fingers: [true, true, false])]), // C#
-        FingeringOptions(num: 2, preferredFingerings: [Fingering(fingers: [true, false, false])]), // D
-        FingeringOptions(num: 3, preferredFingerings: [Fingering(fingers: [false, true, false])]), // Eb
-        FingeringOptions(num: 4, preferredFingerings: [Fingering(fingers: [false, false, false]), Fingering(fingers: [true, true, false])]), // E 1&2 added for testing. 
-        FingeringOptions(num: 5, preferredFingerings: [Fingering(fingers: [true, false, false])]), // F
-        FingeringOptions(num: 6, preferredFingerings: [Fingering(fingers: [false, true, false])]), // F#
-        FingeringOptions(num: 7, preferredFingerings: [Fingering(fingers: [false, false, false])])
+            FingeringOptions(num: 0, preferredFingerings: [.open]), // Middle C
+            FingeringOptions(num: 1, preferredFingerings: [.firstAndSecond]), // C#
+            FingeringOptions(num: 2, preferredFingerings: [.first]), // D
+            FingeringOptions(num: 3, preferredFingerings: [.second]), // Eb
+            FingeringOptions(num: 4, preferredFingerings: [.open, .firstAndSecond]), // E 1&2 added for testing.
+            FingeringOptions(num: 5, preferredFingerings: [.first]), // F
+            FingeringOptions(num: 6, preferredFingerings: [.second]), // F#
+            FingeringOptions(num: 7, preferredFingerings: [.open]) // G
         ],
         clef: .treble)
     }
     static var hornBb: Instrument {
         return Instrument(name: "Bb Horn", transposition: 7, fingeringOptions: [
-        FingeringOptions(num: 0, preferredFingerings: [Fingering(fingers: [false, false, false])]), // Middle C
-        FingeringOptions(num: 1, preferredFingerings: [Fingering(fingers: [true, true, false])]), // C#
-        FingeringOptions(num: 2, preferredFingerings: [Fingering(fingers: [true, false, false])]), // D
-        FingeringOptions(num: 3, preferredFingerings: [Fingering(fingers: [false, true, false])]), // Eb
-        FingeringOptions(num: 4, preferredFingerings: [Fingering(fingers: [false, false, false]), Fingering(fingers: [true, true, false])]), // E 1&2 added for testing.
-        FingeringOptions(num: 5, preferredFingerings: [Fingering(fingers: [true, false, false])]), // F
-        FingeringOptions(num: 6, preferredFingerings: [Fingering(fingers: [false, true, false])]), // F#
-        FingeringOptions(num: 7, preferredFingerings: [Fingering(fingers: [false, false, false])])
+            FingeringOptions(num: 0, preferredFingerings: [.open]), // Middle C
+            FingeringOptions(num: 1, preferredFingerings: [.secondAndThird]), // C#
+            FingeringOptions(num: 2, preferredFingerings: [.firstAndSecond]), // D
+            FingeringOptions(num: 3, preferredFingerings: [.first]), // Eb
+            FingeringOptions(num: 4, preferredFingerings: [.second]), // E 1&2 added for testing.
+            FingeringOptions(num: 5, preferredFingerings: [.open]), // F
+            FingeringOptions(num: 6, preferredFingerings: [.firstAndSecond]), // F#
+            FingeringOptions(num: 7, preferredFingerings: [.first])
         ],
         clef: .treble)
     }
