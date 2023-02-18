@@ -7,6 +7,7 @@
 
 import Foundation
 import SpriteKit
+import SwiftUI
 
 class NoteDisplayScene: SKScene {
     
@@ -17,7 +18,7 @@ class NoteDisplayScene: SKScene {
     var clefXCoordinate: CGFloat { lineGap * -3 }
     var noteXCoordinate: CGFloat { lineGap * 2 }
     var accidentalOffset: CGFloat { lineGap * -1.6 }
-    var note: Note = Note(name: "", num: 3, pos: -1, accidental: .flat, level: 0)
+    var note: Note = Note(name: "C", num: 0, pos: 1, accidental: .natural, level: 0)
     var noteOffset: CGFloat { lineGap * CGFloat(note.pos) / 2.0 }
     
     convenience init(size: CGSize, note: Note, clef: Clef) {

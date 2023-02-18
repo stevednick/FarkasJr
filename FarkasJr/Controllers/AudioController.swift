@@ -77,7 +77,6 @@ class AudioController: ObservableObject {
         guard amp > 0.1 else { return }
         data.frequency = pitch
         data.amp = amp
-        //print(data.noteWithTuning)
     }
     
 }

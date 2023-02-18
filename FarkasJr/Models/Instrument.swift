@@ -42,6 +42,14 @@ struct Instrument: Codable, Identifiable {
         return Array(Set(fingeringsToReturn))
     }
     
+    var fingeringStrings: [String] {
+        return availableFingerings.map { $0.rawValue }
+    }
+    
+    var noteStrings: [String] {
+        return activeNotes.map { $0.name }
+    }
+    
     init(id: UUID = UUID(), name: String, transposition: Int, fingeringOptions: [FingeringOptions], clef: Clef) {
         self.id = id
         self.name = name
@@ -49,11 +57,14 @@ struct Instrument: Codable, Identifiable {
         self.fingeringOptions = fingeringOptions
         self.clef = clef
         self.notes = getNoteList()
-        print(availableFingerings)
     }
     
     func getNoteList() -> [NoteByNum]{
         return NoteStore.getNotes(fingeringOptionsList: self.fingeringOptions, clef: clef)
+    }
+    
+    func getFingeringString(num: Int) -> String {
+        return notes.first(where: { $0.num == num })!.fingering.rawValue
     }
 }
 

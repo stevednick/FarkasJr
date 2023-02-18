@@ -16,7 +16,7 @@ struct WelcomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NoteDisplayView(note: Note(name: "", num: 1, pos: 1, accidental: .natural, level: 1), instrument: .hornF, size: noteDisplaySize)
+                NoteDisplayView(note: .constant(Note(name: "", num: 1, pos: 1, accidental: .natural, level: 1)), instrument: .hornF, size: noteDisplaySize)
                     .cornerRadius(cornerRadius)
                 Text("Welcome to Farkas Jr.")
                     .font(.title)
@@ -26,7 +26,7 @@ struct WelcomeView: View {
                 Text("Please note, this app is in Beta testing currently. I would love to hear your feedback, so if you have any suggestions on how to make this better please email me by clicking the link on the main menu.")
                     .font(.headline)
                     .padding(.top)
-                NoteDisplayView(note: Note(name: "", num: 1, pos: -6, accidental: .natural, level: 1), instrument: .hornF, size: noteDisplaySize)
+                NoteDisplayView(note: .constant(Note(name: "", num: 1, pos: -6, accidental: .natural, level: 1)), instrument: .hornF, size: noteDisplaySize)
                     .cornerRadius(cornerRadius)
                 Spacer()
             }

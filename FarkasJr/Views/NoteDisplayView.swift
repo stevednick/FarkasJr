@@ -1,0 +1,43 @@
+//
+//  NoteDisplayView.swift
+//  FarkasJr
+//
+//  Created by Stephen Nicholls on 12/02/2023.
+//
+
+import SwiftUI
+import SpriteKit
+
+struct NoteDisplayView: View {
+    
+    @Binding var note: Note {
+        mutating didSet {
+            noteDisplayScene = NoteDisplayScene(size: CGSize(width: 330, height: 220), note: note, clef: instrument.clef)
+            noteDisplayScene.scaleMode = .fill
+        }
+    }
+    let instrument: Instrument
+    let size: CGSize // 3:2 aspect ratio works.
+    
+    var noteDisplayScene: NoteDisplayScene
+    
+    init(note: Binding<Note>, instrument: Instrument, size: CGSize) {
+            self._note = note
+            self.instrument = instrument
+            self.size = size
+            noteDisplayScene = NoteDisplayScene(size: CGSize(width: 330, height: 220), note: note.wrappedValue, clef: instrument.clef)
+            noteDisplayScene.scaleMode = .fill
+        }
+
+    
+    var body: some View {
+        SpriteView(scene: noteDisplayScene)
+            .frame(width: size.width, height: size.height)
+    }
+}
+
+struct NoteDisplayView_Previews: PreviewProvider {
+    static var previews: some View {
+        NoteDisplayView(note: .constant(Note(name: "C#", num: 1, pos: 1, accidental: .sharp, level: 1)), instrument: .hornF, size: CGSize(width: 300, height: 200))
+    }
+}

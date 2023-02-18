@@ -23,7 +23,6 @@ struct NoteStore {
             for note in availableNotes {
                 notesToReturn.append(Note(name: note.name, num: numInOctave + (octave * octaveNumAdder), pos: note.pos + (octave * octavePosAdder), accidental: note.accidental, level: note.level))
             }
-            //print("\(i) is \(numInOctave) in octave and \(octave) octave")
         }
         return notesToReturn
     }

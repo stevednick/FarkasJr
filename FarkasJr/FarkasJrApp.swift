@@ -12,7 +12,6 @@ struct FarkasJrApp: App {
     
     @StateObject private var dataController = DataController()
     @State private var errorWrapper: ErrorWrapper?
-    @StateObject private var audioController = AudioController()
     @State private var firstStart = !GameData.firstStartComplete
     
     var body: some Scene {

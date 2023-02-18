@@ -26,3 +26,9 @@ struct Note: Codable, Identifiable {
         self.level = level
     }
 }
+
+extension Note: Equatable {
+    static func == (lhs: Note, rhs: Note) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
