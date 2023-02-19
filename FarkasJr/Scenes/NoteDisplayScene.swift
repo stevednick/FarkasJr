@@ -9,7 +9,7 @@ import Foundation
 import SpriteKit
 import SwiftUI
 
-class NoteDisplayScene: SKScene {
+class NoteDisplayScene: SKScene, ObservableObject {
     
     let lineWidth = 2.0
     let lineGap: CGFloat = 25.0 // This value scales everything else!
@@ -20,18 +20,15 @@ class NoteDisplayScene: SKScene {
     var accidentalOffset: CGFloat { lineGap * -1.6 }
     var note: Note = Note(name: "C", num: 0, pos: 1, accidental: .natural, level: 0)
     var noteOffset: CGFloat { lineGap * CGFloat(note.pos) / 2.0 }
+    var id = UUID()
     
     convenience init(size: CGSize, note: Note, clef: Clef) {
         self.init(size: size)
-        self.note = note
-        self.clef = clef
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.backgroundColor = .white
-        displayStave()
-        let _ = setUpSprite(spriteData: clef.spriteData, xPosition: clefXCoordinate)
-        displayNote()
-        displayAccidental()
-        displayLedgerLines()
+        self.note = note
+        self.clef = clef
+        setUp()
     }
     
     override init(size: CGSize) {
@@ -40,6 +37,14 @@ class NoteDisplayScene: SKScene {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setUp() {
+        displayStave()
+        let _ = setUpSprite(spriteData: clef.spriteData, xPosition: clefXCoordinate)
+        displayNote()
+        displayAccidental()
+        displayLedgerLines()
     }
     
     func displayStave() {

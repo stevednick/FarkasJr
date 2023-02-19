@@ -15,7 +15,7 @@ struct NoteWithTuning {
 struct PlayedNoteData {
     
     let AFrequency: Float = 440.0
-    var frequency: Float = 0
+    var frequency: Float = 440.0
     var amp: Float = 0
     
     var num: Float {
@@ -25,5 +25,4 @@ struct PlayedNoteData {
     var noteWithTuning: NoteWithTuning {
         return NoteWithTuning(num: Int(round(num)), tuning: num - round(num))
     }
-    
 }

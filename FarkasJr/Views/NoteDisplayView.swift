@@ -10,12 +10,7 @@ import SpriteKit
 
 struct NoteDisplayView: View {
     
-    @Binding var note: Note {
-        mutating didSet {
-            noteDisplayScene = NoteDisplayScene(size: CGSize(width: 330, height: 220), note: note, clef: instrument.clef)
-            noteDisplayScene.scaleMode = .fill
-        }
-    }
+    @Binding var note: Note
     let instrument: Instrument
     let size: CGSize // 3:2 aspect ratio works.
     
@@ -33,6 +28,7 @@ struct NoteDisplayView: View {
     var body: some View {
         SpriteView(scene: noteDisplayScene)
             .frame(width: size.width, height: size.height)
+            .id(note.id)
     }
 }
 

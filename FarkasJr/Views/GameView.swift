@@ -11,6 +11,7 @@ struct GameView: View {
     
     @Binding var instrument: Instrument
     @StateObject var gameController: GameController
+    @StateObject var audioController = AudioController()
     let noteDisplaySize: CGSize = CGSize(width: 300, height: 200)
     
     init(instrument: Binding<Instrument>) {
@@ -22,9 +23,15 @@ struct GameView: View {
         NavigationView {
             VStack {
                 Text(gameController.gameText)
+                    .font(.title)
                 NoteDisplayView(note: $gameController.currentNote, instrument: instrument, size: noteDisplaySize)
-                ForEach(gameController.currentAnswers, id: \.id) { answer in
-                    AnswerButton(answer: answer, buttonAction: gameController.answerPressed(isCorrect:))
+                    .padding(.horizontal)
+                if [GameState.checkingNote, GameState.checkingFingering].contains(gameController.gameState) {
+                    ForEach(gameController.currentAnswers, id: \.id) { answer in
+                        AnswerButton(answer: answer, buttonAction: gameController.answerPressed(isCorrect:))
+                    }
+                } else if gameController.gameState == .listening {
+                    ArrowView(playedNoteData: audioController.data, currentNoteNum: gameController.noteSoundingNum)
                 }
             }
         }

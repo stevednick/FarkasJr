@@ -15,6 +15,7 @@ struct HomeScreenView: View {
     let saveAction: () -> Void
     let resetAction: () -> Void
     @State var gameDuration = Float(GameData.gameDuration)
+    @State var noteToDisplay: Note = Note(name: "", num: 0, pos: 0, accidental: .natural, level: 0)
     
     var body: some View {
         NavigationView {
@@ -33,7 +34,7 @@ struct HomeScreenView: View {
                     GameData.currentInstrument = newValue
                 }
                 Spacer()
-                NoteDisplayView(note: $instruments[currentInstrument].notes.randomElement()?.notes.randomElement() ?? .constant(Note(name: "", num: 0, pos: 0, accidental: .natural, level: 0)), instrument: .hornF, size: CGSize(width: 200, height: 133))
+                NoteDisplayView(note: $noteToDisplay, instrument: .hornF, size: CGSize(width: 200, height: 133))
                 Spacer()
                 NavigationLink(destination: GameView(instrument: $instruments[currentInstrument])) {
                     Text("Start!")
@@ -53,6 +54,9 @@ struct HomeScreenView: View {
                 Text("Game Length: \(Int(gameDuration)) Note\(Int(gameDuration) == 1 ? "" : "s")")
                 Spacer()
             }
+        }
+        .onAppear {
+            noteToDisplay = instruments[currentInstrument].activeNotes.randomElement() ?? noteToDisplay
         }
     }
 }

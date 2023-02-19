@@ -17,6 +17,7 @@ class GameController: ObservableObject {
     @Published var roundNumber: Int = 0
     var answeredCorrectly = true
     let numberOfRounds = GameData.gameDuration
+    var noteSoundingNum: Int { currentNote.num - instrument.transposition }
     
     init(instrument: Instrument) {
         self.instrument = instrument
