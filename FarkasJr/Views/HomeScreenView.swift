@@ -55,6 +55,8 @@ struct HomeScreenView: View {
                 Spacer()
             }
         }
+        .navigationTitle("Farkas Jr.")
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             noteToDisplay = instruments[currentInstrument].activeNotes.randomElement() ?? noteToDisplay
         }

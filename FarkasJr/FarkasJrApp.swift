@@ -49,5 +49,6 @@ struct FarkasJrApp: App {
                 WelcomeView()
             })
         }
+
     }
 }

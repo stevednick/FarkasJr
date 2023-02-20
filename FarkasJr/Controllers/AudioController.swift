@@ -74,7 +74,6 @@ class AudioController: ObservableObject {
     }
     
     func update(_ pitch: AUValue, _ amp: AUValue) {
-        guard amp > 0.1 else { return }
         data.frequency = pitch
         data.amp = amp
     }
