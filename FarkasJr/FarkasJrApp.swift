@@ -29,6 +29,7 @@ struct FarkasJrApp: App {
                     dataController.instruments = Instrument.initialData
                 }
             }
+            .navigationViewStyle(.stack)
             .task {
                 do {
                     dataController.instruments = try await DataController.load()

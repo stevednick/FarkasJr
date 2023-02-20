@@ -35,6 +35,7 @@ struct GameView: View {
                 }
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

@@ -55,6 +55,7 @@ struct HomeScreenView: View {
                 Spacer()
             }
         }
+        .navigationViewStyle(.stack)
         .navigationTitle("Farkas Jr.")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
