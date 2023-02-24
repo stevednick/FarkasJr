@@ -14,14 +14,19 @@ struct NoteSelectorView: View {
     
     var body: some View {
         HStack {
-            NoteDisplayView(note: $note, instrument: instrument, size: CGSize(width: 133, height: 90))
-                .padding(.horizontal)
-            Toggle(isOn: $note.isActive) {
+            NoteDisplayView(note: $note, instrument: instrument, size: CGSize(width: 120, height: 80))
+                .padding(.leading, 10)
+            Spacer()
+            Toggle(isOn: $note.isActive, label: {
                 Text("")
+            })
+            .padding(.trailing, 10)
+            .onChange(of: note.isActive) { newValue in
+                return
             }
         }
         .frame(width: 220)
-        .background(.green)
+        .padding(.horizontal)
     }
 }
 

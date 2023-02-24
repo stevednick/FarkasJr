@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C524A4A829A83654006FDB95 /* NoteNumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524A4A729A83654006FDB95 /* NoteNumView.swift */; };
+		C524A4AA29A8F689006FDB95 /* FingeringPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524A4A929A8F689006FDB95 /* FingeringPicker.swift */; };
 		C5285135299EB27200DA5DA5 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5285134299EB27200DA5DA5 /* WelcomeView.swift */; };
 		C5285138299FB76D00DA5DA5 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5285137299FB76D00DA5DA5 /* GameView.swift */; };
 		C528513A299FCB2400DA5DA5 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5285139299FCB2400DA5DA5 /* GameController.swift */; };
@@ -14,6 +16,7 @@
 		C528514129A0FACF00DA5DA5 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C528514029A0FACF00DA5DA5 /* AnswerButton.swift */; };
 		C528514529A2C7DB00DA5DA5 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C528514429A2C7DB00DA5DA5 /* ArrowView.swift */; };
 		C528514729A7D8C700DA5DA5 /* NoteSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C528514629A7D8C700DA5DA5 /* NoteSelectorView.swift */; };
+		C52EF6CF29A8FD2400D708A5 /* NoteMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52EF6CE29A8FD2400D708A5 /* NoteMenuView.swift */; };
 		C548358E299133A000B52FE3 /* JobListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C548358D299133A000B52FE3 /* JobListView.swift */; };
 		C548359129924D8500B52FE3 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = C548359029924D8500B52FE3 /* Job.swift */; };
 		C54835932992998D00B52FE3 /* Fingering.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835922992998C00B52FE3 /* Fingering.swift */; };
@@ -44,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C524A4A729A83654006FDB95 /* NoteNumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNumView.swift; sourceTree = "<group>"; };
+		C524A4A929A8F689006FDB95 /* FingeringPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingeringPicker.swift; sourceTree = "<group>"; };
 		C5285134299EB27200DA5DA5 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		C5285137299FB76D00DA5DA5 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		C5285139299FCB2400DA5DA5 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
@@ -51,6 +56,7 @@
 		C528514029A0FACF00DA5DA5 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
 		C528514429A2C7DB00DA5DA5 /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
 		C528514629A7D8C700DA5DA5 /* NoteSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSelectorView.swift; sourceTree = "<group>"; };
+		C52EF6CE29A8FD2400D708A5 /* NoteMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMenuView.swift; sourceTree = "<group>"; };
 		C548358D299133A000B52FE3 /* JobListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListView.swift; sourceTree = "<group>"; };
 		C548359029924D8500B52FE3 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		C54835922992998C00B52FE3 /* Fingering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fingering.swift; sourceTree = "<group>"; };
@@ -104,6 +110,9 @@
 				C528514029A0FACF00DA5DA5 /* AnswerButton.swift */,
 				C528514429A2C7DB00DA5DA5 /* ArrowView.swift */,
 				C528514629A7D8C700DA5DA5 /* NoteSelectorView.swift */,
+				C524A4A729A83654006FDB95 /* NoteNumView.swift */,
+				C524A4A929A8F689006FDB95 /* FingeringPicker.swift */,
+				C52EF6CE29A8FD2400D708A5 /* NoteMenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,10 +288,13 @@
 				C54835972992A21400B52FE3 /* Clef.swift in Sources */,
 				C548359B2992FAD000B52FE3 /* NoteFormationData.swift in Sources */,
 				C54835992992F72D00B52FE3 /* Accidental.swift in Sources */,
+				C524A4A829A83654006FDB95 /* NoteNumView.swift in Sources */,
 				C548359D2993042800B52FE3 /* Note.swift in Sources */,
+				C524A4AA29A8F689006FDB95 /* FingeringPicker.swift in Sources */,
 				C54835A52994137E00B52FE3 /* DataController.swift in Sources */,
 				C528514729A7D8C700DA5DA5 /* NoteSelectorView.swift in Sources */,
 				C548358E299133A000B52FE3 /* JobListView.swift in Sources */,
+				C52EF6CF29A8FD2400D708A5 /* NoteMenuView.swift in Sources */,
 				C5F4DEF6299D1D340099D2FB /* GameData.swift in Sources */,
 				C54835952992A1C900B52FE3 /* NoteStore.swift in Sources */,
 				C54835BD29994E2600B52FE3 /* HomeScreenView.swift in Sources */,

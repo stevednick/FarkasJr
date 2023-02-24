@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum Fingering: String, Codable {
+enum Fingering: String, Codable, Equatable {
+    
     case open = "0"
     case second = "2"
     case first = "1"

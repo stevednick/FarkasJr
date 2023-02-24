@@ -20,39 +20,48 @@ struct HomeScreenView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Button("Reset Instrument Data") {
-                    resetAction()
-                    saveAction()
-                }
-                .padding()
-                Picker("Select an Instrument", selection: $currentInstrument) {
-                    ForEach(instruments.indices, id: \.self) { index in
-                        Text(instruments[index].name).tag(index)
+                VStack{
+                    Button("Reset Instrument Data") {
+                        resetAction()
+                        saveAction()
                     }
+                    .padding()
+                    Picker("Select an Instrument", selection: $currentInstrument) {
+                        ForEach(instruments.indices, id: \.self) { index in
+                            Text(instruments[index].name).tag(index)
+                        }
+                    }
+                    .onChange(of: currentInstrument) { newValue in
+                        GameData.currentInstrument = newValue
+                    }
+                    .padding()
+                    NavigationLink("Note Selection") {
+                        NoteMenuView(instruments: $instruments, saveAction: self.saveAction, currentInstrument: currentInstrument)
+                    }
+                    .padding()
                 }
-                .onChange(of: currentInstrument) { newValue in
-                    GameData.currentInstrument = newValue
+                VStack{
+                    NoteDisplayView(note: $noteToDisplay, instrument: .hornF, size: CGSize(width: 300, height: 200))
+                    Spacer()
+                    NavigationLink(destination: GameView(instrument: $instruments[currentInstrument])) {
+                        Text("Start!")
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color(.white))
+                            .padding(30)
+                            .font(.largeTitle)
+                            .background(Color.black)
+                            .cornerRadius(10)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .padding()
+                    Spacer()
+                    Slider(value: $gameDuration, in: 1...20) { _ in
+                        GameData.gameDuration = Int(self.gameDuration)
+                    }
+                    .padding(.horizontal, 30.0)
+                    Text("Game Length: \(Int(gameDuration)) Note\(Int(gameDuration) == 1 ? "" : "s")")
+                    Spacer()
                 }
-                Spacer()
-                NoteDisplayView(note: $noteToDisplay, instrument: .hornF, size: CGSize(width: 300, height: 200))
-                Spacer()
-                NavigationLink(destination: GameView(instrument: $instruments[currentInstrument])) {
-                    Text("Start!")
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color(.white))
-                        .padding(30)
-                        .font(.largeTitle)
-                        .background(Color.black)
-                        .cornerRadius(10)
-                }
-                .buttonStyle(PlainButtonStyle())
-                Spacer()
-                Slider(value: $gameDuration, in: 1...20) { _ in
-                    GameData.gameDuration = Int(self.gameDuration)
-                }
-                .padding(.horizontal, 30.0)
-                Text("Game Length: \(Int(gameDuration)) Note\(Int(gameDuration) == 1 ? "" : "s")")
-                Spacer()
             }
         }
         .navigationViewStyle(.stack)

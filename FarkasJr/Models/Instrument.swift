@@ -67,6 +67,10 @@ struct Instrument: Codable, Identifiable {
     func getFingeringString(num: Int) -> String {
         return notes.first(where: { $0.num == num })!.fingering.rawValue
     }
+    
+    func fingeringOptionsByNum(_ num: Int) -> [Fingering] {
+        return fingeringOptions.first(where: { $0.num == num})!.preferredFingerings
+    }
 }
 
 extension Instrument {
