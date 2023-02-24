@@ -7,44 +7,60 @@
 
 import SwiftUI
 
-struct ArrowView: View { // Almost entirely crafted by ChatGPT...
+struct ArrowView: View {
     
     let playedNoteData: PlayedNoteData
     let currentNoteNum: Int
     let value: Int
-    let ampThreshold: Float = 0.1
+    let correctNoteHeard: Bool
     
-    init(playedNoteData: PlayedNoteData, currentNoteNum: Int) {
+    init(playedNoteData: PlayedNoteData, currentNoteNum: Int, correctNoteHeard: Bool) {
         self.playedNoteData = playedNoteData
         self.currentNoteNum = currentNoteNum
         self.value = playedNoteData.noteWithTuning.num - currentNoteNum
+        self.correctNoteHeard = correctNoteHeard
     }
     
-    // Sort this to recieve playedNoteData, know what the expected note is show correctly... Not such a problem?
-    
     var body: some View {
-        let absValue = abs(value)
-        let scaleFactor = absValue == 0 ? 5.0 : (log(Double(absValue) + 1.0) / log(41.0)) * 6.0 + 2.0
-        let arrowHeight = CGFloat(20) * scaleFactor
+        var ballOffset: CGFloat {
+            let valueToReturn = CGFloat(value) * -15.0
+            return max(-150, min(valueToReturn, 150))
+        }
+        let lineLength: CGFloat = 250
+        let lineWidth: CGFloat = 4
+        let ballSize: CGFloat = 20
         
-        return VStack {
-            if playedNoteData.amp > ampThreshold {
-                if value == 0 {
-                    Image(systemName: "hand.thumbsup.fill")
-                        .font(.system(size: arrowHeight))
-                        .foregroundColor(.green)
-                } else {
-                    Image(systemName: value > 0 ? "arrow.down" : "arrow.up")
-                        .font(.system(size: arrowHeight))
+        return HStack {
+            if correctNoteHeard {
+                Image(systemName: "hand.thumbsup.fill")
+                    .font(.system(size: 100))
+                    .foregroundColor(.green)
+            } else {
+                ZStack {
+                    Rectangle()
+                        .frame(width: lineLength, height: lineWidth)
+                        .foregroundColor(.black)
+                    Text("Too High")
+                        .font(.title2)
+                        .offset(CGSize(width: -90, height: -70))
+                    Text("Too Low")
+                        .font(.title2)
+                        .offset(CGSize(width: -90, height: 70))
+                    if playedNoteData.ampThresholdMet {
+                        Circle()
+                            .frame(width: ballSize, height: ballSize)
+                            .foregroundColor(value == 0 ? .black : .red)
+                            .offset(y: ballOffset)
+                            .animation(.linear(duration: 0.3), value: ballOffset)
+                    }
                 }
             }
         }
-        .frame(height: 200)
+        .frame(height: 300)
     }
 }
-
 struct ArrowView_Previews: PreviewProvider {
     static var previews: some View {
-        ArrowView(playedNoteData: PlayedNoteData(), currentNoteNum: 0)
+        ArrowView(playedNoteData: PlayedNoteData(), currentNoteNum: 0, correctNoteHeard: false)
     }
 }

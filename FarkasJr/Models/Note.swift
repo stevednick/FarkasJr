@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Note: Codable, Identifiable {
+struct Note: Codable {
     
     let id: UUID
     let name: String
@@ -24,11 +24,5 @@ struct Note: Codable, Identifiable {
         self.pos = pos
         self.accidental = accidental
         self.level = level
-    }
-}
-
-extension Note: Equatable {
-    static func == (lhs: Note, rhs: Note) -> Bool {
-        return lhs.id == rhs.id
     }
 }

@@ -34,7 +34,7 @@ struct HomeScreenView: View {
                     GameData.currentInstrument = newValue
                 }
                 Spacer()
-                NoteDisplayView(note: $noteToDisplay, instrument: .hornF, size: CGSize(width: 200, height: 133))
+                NoteDisplayView(note: $noteToDisplay, instrument: .hornF, size: CGSize(width: 300, height: 200))
                 Spacer()
                 NavigationLink(destination: GameView(instrument: $instruments[currentInstrument])) {
                     Text("Start!")

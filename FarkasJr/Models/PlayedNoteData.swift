@@ -17,6 +17,10 @@ struct PlayedNoteData {
     let AFrequency: Float = 440.0
     var frequency: Float = 440.0
     var amp: Float = 0
+    let ampThreshold: Float = 0.1
+    var ampThresholdMet: Bool {
+        amp > ampThreshold
+    }
     
     var num: Float {
         let ratio = frequency/AFrequency

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class GameController: ObservableObject {
 
@@ -18,10 +19,23 @@ class GameController: ObservableObject {
     var answeredCorrectly = true
     let numberOfRounds = GameData.gameDuration
     var noteSoundingNum: Int { currentNote.num - instrument.transposition }
+    let audioController = AudioController()
+    @Published var playedNoteData = PlayedNoteData()
+    var recentPlayedNotes: [Int] = []
+    var cancellable: AnyCancellable = AnyCancellable({})
+    @Published var correctNoteHeard = false
+    @Published var correctClicked = false
     
     init(instrument: Instrument) {
         self.instrument = instrument
         self.currentNote = instrument.activeNotes.randomElement()!
+        self.cancellable = audioController.$data
+            .sink() {
+                self.playedNoteData = $0
+                if self.gameState == .listening {
+                    self.playedNoteDataReceived($0)
+                }
+            }
         nextQuestion()
     }
     
@@ -69,8 +83,33 @@ class GameController: ObservableObject {
             answeredCorrectly = false
             return
         }
-        nextState()
+        correctClicked = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.correctClicked = false
+            self.nextState()
+        }
     }
+    
+    func playedNoteDataReceived(_ data: PlayedNoteData) {
+        
+        let arrayLength = 20
+        let correctValuesRequired = 15
+        
+        recentPlayedNotes.append(data.noteWithTuning.num)
+        if recentPlayedNotes.count > arrayLength {
+            recentPlayedNotes.removeFirst()
+        }
+        
+        if recentPlayedNotes.filter({ $0 == noteSoundingNum }).count >= correctValuesRequired && !correctNoteHeard{
+            correctNoteHeard = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.nextState()
+                self.correctNoteHeard = false
+            }
+            
+        }
+    }
+
 }
 
 enum GameState {
