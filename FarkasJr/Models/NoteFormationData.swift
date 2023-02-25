@@ -26,7 +26,7 @@ struct NoteFormationData {
 
 extension NoteFormationData {
     static var data: [NoteFormationData] {
-        [NoteFormationData(name: "B#", num: 0, pos: -1, accidental: .sharp, level: 3),
+        [// NoteFormationData(name: "B#", num: 0, pos: -1, accidental: .sharp, level: 3),
          NoteFormationData(name: "C", num: 0, pos: 0, accidental: .natural, level: 0),
          NoteFormationData(name: "C#", num: 1, pos: 0, accidental: .sharp, level: 1),
          NoteFormationData(name: "Db", num: 1, pos: 1, accidental: .flat, level: 2),
@@ -34,8 +34,8 @@ extension NoteFormationData {
          NoteFormationData(name: "D#", num: 3, pos: 1, accidental: .sharp, level: 2),
          NoteFormationData(name: "Eb", num: 3, pos: 2, accidental: .flat, level: 1),
          NoteFormationData(name: "E", num: 4, pos: 2, accidental: .natural, level: 0),
-         NoteFormationData(name: "E#", num: 5, pos: 2, accidental: .sharp, level: 3),
-         NoteFormationData(name: "Fb", num: 4, pos: 3, accidental: .flat, level: 3),
+         // NoteFormationData(name: "E#", num: 5, pos: 2, accidental: .sharp, level: 3),
+         // NoteFormationData(name: "Fb", num: 4, pos: 3, accidental: .flat, level: 3),
          NoteFormationData(name: "F", num: 5, pos: 3, accidental: .natural, level: 0),
          NoteFormationData(name: "F#", num: 6, pos: 3, accidental: .sharp, level: 1),
          NoteFormationData(name: "Gb", num: 6, pos: 4, accidental: .flat, level: 2),
@@ -45,7 +45,7 @@ extension NoteFormationData {
          NoteFormationData(name: "A", num: 9, pos: 5, accidental: .natural, level: 0),
          NoteFormationData(name: "A#", num: 10, pos: 5, accidental: .sharp, level: 2),
          NoteFormationData(name: "Bb", num: 10, pos: 6, accidental: .flat, level: 1),
-         NoteFormationData(name: "B", num: 11, pos: 6, accidental: .natural, level: 0),
-         NoteFormationData(name: "Cb", num: 11, pos: 7, accidental: .flat, level: 3)]
+         NoteFormationData(name: "B", num: 11, pos: 6, accidental: .natural, level: 0)]
+         // NoteFormationData(name: "Cb", num: 11, pos: 7, accidental: .flat, level: 3)]
     }
 }

@@ -10,8 +10,9 @@ import SwiftUI
 struct NoteSelectorView: View {
     
     @Binding var note: Note
-    let instrument: Instrument
     
+    let instrument: Instrument
+        
     var body: some View {
         HStack {
             NoteDisplayView(note: $note, instrument: instrument, size: CGSize(width: 120, height: 80))
@@ -21,12 +22,8 @@ struct NoteSelectorView: View {
                 Text("")
             })
             .padding(.trailing, 10)
-            .onChange(of: note.isActive) { newValue in
-                return
-            }
         }
         .frame(width: 220)
-        .padding(.horizontal)
     }
 }
 

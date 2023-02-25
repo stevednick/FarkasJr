@@ -57,6 +57,7 @@
 		C528514429A2C7DB00DA5DA5 /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
 		C528514629A7D8C700DA5DA5 /* NoteSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSelectorView.swift; sourceTree = "<group>"; };
 		C52EF6CE29A8FD2400D708A5 /* NoteMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMenuView.swift; sourceTree = "<group>"; };
+		C52EF6D029A9DB5900D708A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C548358D299133A000B52FE3 /* JobListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListView.swift; sourceTree = "<group>"; };
 		C548359029924D8500B52FE3 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		C54835922992998C00B52FE3 /* Fingering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fingering.swift; sourceTree = "<group>"; };
@@ -176,6 +177,7 @@
 		C569A32C299130A700E99884 /* FarkasJr */ = {
 			isa = PBXGroup;
 			children = (
+				C52EF6D029A9DB5900D708A5 /* Info.plist */,
 				C528513D29A025A400DA5DA5 /* Controllers */,
 				C5285136299FB6C500DA5DA5 /* Views */,
 				C54835AA2997CB7100B52FE3 /* Scenes */,
@@ -438,8 +440,8 @@
 				DEVELOPMENT_TEAM = V4DPA4RA3P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FarkasJr/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We use the microphone to analyse the your playing. Audio is always discarded after analysis.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
@@ -472,8 +474,8 @@
 				DEVELOPMENT_TEAM = V4DPA4RA3P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FarkasJr/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We use the microphone to analyse the your playing. Audio is always discarded after analysis.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;

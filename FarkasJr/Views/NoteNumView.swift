@@ -20,8 +20,8 @@ struct NoteNumView: View {
             Spacer()
             FingeringPicker(noteByNum: $noteByNum, instrument: instrument)
             Spacer()
-            
         }
+        .border(Color(hue: 1.0, saturation: 0.0, brightness: 0.917), width: 1)
     }
 }
 

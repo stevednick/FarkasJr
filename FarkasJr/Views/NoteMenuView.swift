@@ -13,15 +13,19 @@ struct NoteMenuView: View {
     let currentInstrument: Int
     var body: some View {
         NavigationView {
-            List {
-                ForEach($instruments[currentInstrument].notes, id: \.num) { noteByNum in
-                    NoteNumView(noteByNum: noteByNum, instrument: instruments[currentInstrument])
+            ScrollView {
+                VStack(spacing: 0) {
+                    ForEach($instruments[currentInstrument].notes, id: \.num) { noteByNum in
+                        NoteNumView(noteByNum: noteByNum, instrument: instruments[currentInstrument])
+                    }
+                }
+                .padding(.horizontal)
+                .onDisappear {
+                    saveAction()
                 }
             }
         }
-        .onDisappear {
-            saveAction()
-        }
+        .navigationTitle(Text("Note Selection"))
     }
 }
 

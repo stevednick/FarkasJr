@@ -13,68 +13,68 @@ struct HomeScreenView: View {
     @State private var currentInstrument: Int = GameData.currentInstrument
     
     let saveAction: () -> Void
-    let resetAction: () -> Void
     @State var gameDuration = Float(GameData.gameDuration)
     @State var noteToDisplay: Note = Note(name: "", num: 0, pos: 0, accidental: .natural, level: 0)
     
     var body: some View {
         NavigationView {
-            VStack {
-                VStack{
-                    Button("Reset Instrument Data") {
-                        resetAction()
-                        saveAction()
-                    }
-                    .padding()
-                    Picker("Select an Instrument", selection: $currentInstrument) {
-                        ForEach(instruments.indices, id: \.self) { index in
-                            Text(instruments[index].name).tag(index)
-                        }
-                    }
-                    .onChange(of: currentInstrument) { newValue in
-                        GameData.currentInstrument = newValue
-                    }
-                    .padding()
-                    NavigationLink("Note Selection") {
-                        NoteMenuView(instruments: $instruments, saveAction: self.saveAction, currentInstrument: currentInstrument)
-                    }
-                    .padding()
+            VStack{
+                Text("Farkas Jr.")
+                    .font(.system(size: 50))
+                    .fontWeight(.semibold)
+                    .padding(.top, 150)
+                Spacer()
+                NoteDisplayView(note: $noteToDisplay, instrument: .hornF, size: CGSize(width: 300, height: 200))
+                Spacer()
+                NavigationLink(destination: GameView(instrument: $instruments[currentInstrument])) {
+                    Text("Start!")
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color(.white))
+                        .frame(width: 200, height: 80)
+                        .font(.largeTitle)
+                        .background(.blue)
+                        .cornerRadius(10)
                 }
-                VStack{
-                    NoteDisplayView(note: $noteToDisplay, instrument: .hornF, size: CGSize(width: 300, height: 200))
-                    Spacer()
-                    NavigationLink(destination: GameView(instrument: $instruments[currentInstrument])) {
-                        Text("Start!")
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color(.white))
-                            .padding(30)
-                            .font(.largeTitle)
-                            .background(Color.black)
-                            .cornerRadius(10)
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    .padding()
-                    Spacer()
-                    Slider(value: $gameDuration, in: 1...20) { _ in
-                        GameData.gameDuration = Int(self.gameDuration)
-                    }
-                    .padding(.horizontal, 30.0)
-                    Text("Game Length: \(Int(gameDuration)) Note\(Int(gameDuration) == 1 ? "" : "s")")
-                    Spacer()
+                .buttonStyle(PlainButtonStyle())
+                .padding()
+                Spacer()
+                Slider(value: $gameDuration, in: 1...20) { _ in
+                    GameData.gameDuration = Int(self.gameDuration)
+                }
+                .frame(width: 200)
+                Text("Game Length: \(Int(gameDuration)) Note\(Int(gameDuration) == 1 ? "" : "s")")
+                Spacer()
+
+            }
+            .edgesIgnoringSafeArea(.top)
+        }
+        //.navigationViewStyle(.stack)
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarLeading) {
+                NavigationLink("Note Selection") {
+                    NoteMenuView(instruments: $instruments, saveAction: self.saveAction, currentInstrument: currentInstrument)
                 }
             }
-        }
-        .navigationViewStyle(.stack)
-        .navigationTitle("Farkas Jr.")
-        .navigationBarTitleDisplayMode(.inline)
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Picker("Select an Instrument", selection: $currentInstrument) {
+                    ForEach(instruments.indices, id: \.self) { index in
+                        Text(instruments[index].name).tag(index)
+                    }
+                }
+                .onChange(of: currentInstrument) { newValue in
+                    GameData.currentInstrument = newValue
+                }
+            }
+        })
         .onAppear {
             noteToDisplay = instruments[currentInstrument].activeNotes.randomElement() ?? noteToDisplay
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreenView(instruments: .constant([Instrument.hornF]), saveAction: {}, resetAction: {})
+        HomeScreenView(instruments: .constant([Instrument.hornF]), saveAction: {})
     }
 }

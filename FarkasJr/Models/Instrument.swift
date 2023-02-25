@@ -76,12 +76,18 @@ struct Instrument: Codable, Identifiable {
 extension Instrument {
     static var hornF: Instrument {
         return Instrument(name: "F Horn", transposition: 7, fingeringOptions: [
+            FingeringOptions(num: -7, preferredFingerings: [.first]), // F
+            FingeringOptions(num: -6, preferredFingerings: [.second]), // F#
+            FingeringOptions(num: -5, preferredFingerings: [.open]), // G
+            FingeringOptions(num: -4, preferredFingerings: [.secondAndThird]), // G#
+            FingeringOptions(num: -3, preferredFingerings: [.firstAndSecond, .third]), // A
+            FingeringOptions(num: -2, preferredFingerings: [.first]), // Bb
             FingeringOptions(num: -1, preferredFingerings: [.second]), // B
             FingeringOptions(num: 0, preferredFingerings: [.open]), // Middle C
             FingeringOptions(num: 1, preferredFingerings: [.firstAndSecond]), // C#
             FingeringOptions(num: 2, preferredFingerings: [.first]), // D
             FingeringOptions(num: 3, preferredFingerings: [.second]), // Eb
-            FingeringOptions(num: 4, preferredFingerings: [.open, .firstAndSecond]), // E 1&2 added for testing.
+            FingeringOptions(num: 4, preferredFingerings: [.open]), // E
             FingeringOptions(num: 5, preferredFingerings: [.first]), // F
             FingeringOptions(num: 6, preferredFingerings: [.second]), // F#
             FingeringOptions(num: 7, preferredFingerings: [.open]), // G
@@ -89,13 +95,23 @@ extension Instrument {
             FingeringOptions(num: 9, preferredFingerings: [.firstAndSecond, .third]), // A
             FingeringOptions(num: 10, preferredFingerings: [.first]), // Bb
             FingeringOptions(num: 11, preferredFingerings: [.second]), // B
-            FingeringOptions(num: 12, preferredFingerings: [.open]) // C
+            FingeringOptions(num: 12, preferredFingerings: [.open]), // C
+            FingeringOptions(num: 13, preferredFingerings: [.firstAndSecond]), // C#
+            FingeringOptions(num: 14, preferredFingerings: [.first]), // D
+            FingeringOptions(num: 15, preferredFingerings: [.second]), // Eb
+            FingeringOptions(num: 16, preferredFingerings: [.open]), // E
             
         ],
         clef: .treble)
     }
     static var hornBb: Instrument {
         return Instrument(name: "Bb Horn", transposition: 7, fingeringOptions: [
+            FingeringOptions(num: -7, preferredFingerings: [.open]), // F
+            FingeringOptions(num: -6, preferredFingerings: [.firstSecondAndThird]), // F#
+            FingeringOptions(num: -5, preferredFingerings: [.firstAndThird]), //G
+            FingeringOptions(num: -4, preferredFingerings: [.secondAndThird]), // G#
+            FingeringOptions(num: -3, preferredFingerings: [.firstAndSecond, .third]), // A
+            FingeringOptions(num: -2, preferredFingerings: [.first]), // Bb
             FingeringOptions(num: -1, preferredFingerings: [.second]), // B
             FingeringOptions(num: 0, preferredFingerings: [.open]), // Middle C
             FingeringOptions(num: 1, preferredFingerings: [.secondAndThird]), // C#
@@ -109,7 +125,12 @@ extension Instrument {
             FingeringOptions(num: 9, preferredFingerings: [.firstAndSecond, .third]), // A
             FingeringOptions(num: 10, preferredFingerings: [.first]), // Bb
             FingeringOptions(num: 11, preferredFingerings: [.second]), // B
-            FingeringOptions(num: 12, preferredFingerings: [.open]) // C
+            FingeringOptions(num: 12, preferredFingerings: [.open]), // C
+            FingeringOptions(num: 13, preferredFingerings: [.secondAndThird]), // C#
+            FingeringOptions(num: 14, preferredFingerings: [.firstAndSecond]), // D
+            FingeringOptions(num: 15, preferredFingerings: [.first]), // Eb
+            FingeringOptions(num: 16, preferredFingerings: [.second]), // E 1&2 added for testing.
+            FingeringOptions(num: 17, preferredFingerings: [.open]), // F
         ],
         clef: .treble)
     }

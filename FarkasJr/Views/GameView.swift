@@ -40,6 +40,14 @@ struct GameView: View {
             }
         }
         .navigationViewStyle(.stack)
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Text("        Score: \(gameController.correctAnswers)")
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Text("\(gameController.roundNumber) of \(gameController.numberOfRounds)")
+            }
+        })
     }
 }
 

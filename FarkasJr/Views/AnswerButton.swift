@@ -17,14 +17,17 @@ struct AnswerButton: View {
     
     var body: some View {
         VStack{
-            Button(answer.description) {
+            Button {
                 isClicked = true
                 buttonAction(answer.isCorrect)
                 fadeOut = !answer.isCorrect
+            } label: {
+                Text(answer.description)
+                    .frame(width: 300.0, height: 50.0)
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
             }
-            .foregroundColor(.white)
-            .font(.largeTitle)
-            .frame(width: 300.0, height: 50.0)
+            .contentShape(Rectangle())
             .background(isClicked ? answer.isCorrect ? .green : .red : .black)
             .cornerRadius(15)
             .opacity(fadeOut ? 0.0 : 1.0)

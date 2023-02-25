@@ -9,22 +9,32 @@ import Foundation
 import Combine
 
 class GameController: ObservableObject {
+    
+    // MARK: - Properties
 
-    let instrument: Instrument
     @Published var currentNote: Note
     @Published var gameState: GameState = .checkingNote
     @Published var gameText: String = "What note is this?"
     @Published var currentAnswers: [Answer] = []
     @Published var roundNumber: Int = 0
+    @Published var playedNoteData = PlayedNoteData()
+    @Published var correctNoteHeard = false
+    @Published var correctClicked = false
+    
+    let instrument: Instrument
+    
     var answeredCorrectly = true
+    var correctAnswers = -1
     let numberOfRounds = GameData.gameDuration
     var noteSoundingNum: Int { currentNote.num - instrument.transposition }
     let audioController = AudioController()
-    @Published var playedNoteData = PlayedNoteData()
+
     var recentPlayedNotes: [Int] = []
     var cancellable: AnyCancellable = AnyCancellable({})
-    @Published var correctNoteHeard = false
-    @Published var correctClicked = false
+
+    
+    // MARK: - Init
+
     
     init(instrument: Instrument) {
         self.instrument = instrument
@@ -39,13 +49,8 @@ class GameController: ObservableObject {
         nextQuestion()
     }
     
-    func nextQuestion() {
-        roundNumber += 1
-        currentNote = instrument.activeNotes.randomElement()!
-        currentAnswers = generateAnswers(correctAnswer: currentNote.name, possibleAnswers: instrument.noteStrings)
-        gameText = "What note is this?"
-        answeredCorrectly = true
-    }
+    // MARK: - State Machine
+
     
     func nextState() {
         switch gameState {
@@ -60,6 +65,7 @@ class GameController: ObservableObject {
             if roundNumber == numberOfRounds {
                 gameState = .finished
                 gameText = "Finished!"
+                if answeredCorrectly { correctAnswers += 1}
                 return
             } else {
                 nextQuestion()
@@ -68,6 +74,17 @@ class GameController: ObservableObject {
         case .finished:
             return
         }
+    }
+
+    // MARK: - Questions/Answers
+
+    func nextQuestion() {
+        roundNumber += 1
+        currentNote = instrument.activeNotes.randomElement()!
+        currentAnswers = generateAnswers(correctAnswer: currentNote.name, possibleAnswers: instrument.noteStrings)
+        gameText = "What note is this?"
+        if answeredCorrectly { correctAnswers += 1}
+        answeredCorrectly = true
     }
     
     func generateAnswers(correctAnswer: String, possibleAnswers: [String]) -> [Answer] {
@@ -89,6 +106,9 @@ class GameController: ObservableObject {
             self.nextState()
         }
     }
+    
+    // MARK: - Dealing with playedNoteData
+
     
     func playedNoteDataReceived(_ data: PlayedNoteData) {
         

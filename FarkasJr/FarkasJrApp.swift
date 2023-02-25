@@ -25,8 +25,6 @@ struct FarkasJrApp: App {
                             errorWrapper = ErrorWrapper(error: error, guidance: "Try again later.")
                         }
                     }
-                } resetAction: {
-                    dataController.instruments = Instrument.initialData
                 }
             }
             .navigationViewStyle(.stack)
