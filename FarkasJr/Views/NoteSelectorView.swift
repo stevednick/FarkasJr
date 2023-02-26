@@ -15,7 +15,7 @@ struct NoteSelectorView: View {
         
     var body: some View {
         HStack {
-            NoteDisplayView(note: $note, instrument: instrument, size: CGSize(width: 120, height: 80))
+            NoteDisplayView(note: $note, instrument: instrument, size: CGSize(width: 120, height: 120))
                 .padding(.leading, 10)
             Spacer()
             Toggle(isOn: $note.isActive, label: {

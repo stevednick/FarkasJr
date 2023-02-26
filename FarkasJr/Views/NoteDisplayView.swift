@@ -20,8 +20,8 @@ struct NoteDisplayView: View {
             self._note = note
             self.instrument = instrument
             self.size = size
-            noteDisplayScene = NoteDisplayScene(size: CGSize(width: 330, height: 220), note: note.wrappedValue, clef: instrument.clef)
-            noteDisplayScene.scaleMode = .fill
+            noteDisplayScene = NoteDisplayScene(size: CGSize(width: 330, height: 330), note: note.wrappedValue, clef: instrument.clef)
+            noteDisplayScene.scaleMode = .aspectFit
         }
 
     
@@ -34,6 +34,6 @@ struct NoteDisplayView: View {
 
 struct NoteDisplayView_Previews: PreviewProvider {
     static var previews: some View {
-        NoteDisplayView(note: .constant(Note(name: "C#", num: 1, pos: 1, accidental: .sharp, level: 1)), instrument: .hornF, size: CGSize(width: 300, height: 200))
+        NoteDisplayView(note: .constant(Note(name: "C#", num: 1, pos: -6, accidental: .natural, level: 1)), instrument: .hornF, size: CGSize(width: 300, height: 300))
     }
 }

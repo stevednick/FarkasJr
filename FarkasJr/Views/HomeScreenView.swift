@@ -24,7 +24,7 @@ struct HomeScreenView: View {
                     .fontWeight(.semibold)
                     .padding(.top, 150)
                 Spacer()
-                NoteDisplayView(note: $noteToDisplay, instrument: .hornF, size: CGSize(width: 300, height: 200))
+                NoteDisplayView(note: $noteToDisplay, instrument: .hornF, size: CGSize(width: 250, height: 250))
                 Spacer()
                 NavigationLink(destination: GameView(instrument: $instruments[currentInstrument])) {
                     Text("Start!")

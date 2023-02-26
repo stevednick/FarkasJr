@@ -13,7 +13,7 @@ class NoteDisplayScene: SKScene, ObservableObject {
     
     let lineWidth = 2.0
     let lineGap: CGFloat = 25.0 // This value scales everything else!
-    let width = 300.0
+    let width = 270.0
     var clef: Clef = .treble
     var clefXCoordinate: CGFloat { lineGap * -3 }
     var noteXCoordinate: CGFloat { lineGap * 2 }

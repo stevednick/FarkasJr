@@ -12,7 +12,7 @@ struct GameView: View {
     @Binding var instrument: Instrument
     @StateObject var gameController: GameController
     //@StateObject var audioController = AudioController()
-    let noteDisplaySize: CGSize = CGSize(width: 300, height: 200)
+    let noteDisplaySize: CGSize = CGSize(width: 300, height: 300)
     
     init(instrument: Binding<Instrument>) {
         self._instrument = instrument
