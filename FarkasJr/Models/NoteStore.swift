@@ -7,25 +7,7 @@
 
 import Foundation
 
-struct NoteStore {
-    
-    static func getNotes(range: Range<Int>) -> [Note] { // Is this already obselete? Delete as necessary. 
-        let octaveNumAdder = 12
-        let octavePosAdder = 7
-        
-        var notesToReturn = [Note]()
-        for i in range {
-            let octave = ((i + octaveNumAdder*10)/octaveNumAdder)-10
-            var numInOctave = (i%octaveNumAdder)
-            numInOctave += numInOctave < 0 ? 12 : 0
-            
-            let availableNotes = NoteFormationData.data.filter { $0.num == numInOctave }
-            for note in availableNotes {
-                notesToReturn.append(Note(name: note.name, num: numInOctave + (octave * octaveNumAdder), pos: note.pos + (octave * octavePosAdder), accidental: note.accidental, level: note.level))
-            }
-        }
-        return notesToReturn
-    }
+struct NoteStore { // Simply to assemble notes on first start for each instrument. 
     
     static func getNotes(fingeringOptionsList: [FingeringOptions], clef: Clef) -> [NoteByNum] {
         let octaveNumAdder = 12
@@ -46,6 +28,6 @@ struct NoteStore {
             }
             notesToReturn.append(newNoteByNum)
         }
-        return notesToReturn
+        return notesToReturn.reversed() // Reverse just to display note list correct way up.
     }
 }

@@ -70,6 +70,7 @@ struct HomeScreenView: View {
             noteToDisplay = instruments[currentInstrument].activeNotes.randomElement() ?? noteToDisplay
         }
         .navigationBarTitleDisplayMode(.inline)
+        .navigationViewStyle(.stack)
     }
 }
 

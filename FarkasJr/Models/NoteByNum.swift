@@ -10,7 +10,7 @@ import Foundation
 struct NoteByNum: Codable, Identifiable {
     
     let id: UUID
-    let num: Int
+    var num: Int
     var notes: [Note]
     var fingering: Fingering
     
