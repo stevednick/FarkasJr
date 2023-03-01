@@ -57,14 +57,14 @@ class GameController: ObservableObject {
         case .checkingNote:
             gameState = .checkingFingering
             currentAnswers = generateAnswers(correctAnswer: instrument.getFingeringString(num: currentNote.num) , possibleAnswers: instrument.fingeringStrings)
-            gameText = "What fingering is a \(currentNote.name)"
+            gameText = "What fingering is this \(currentNote.name)"
         case .checkingFingering:
             gameText = "Play a \(currentNote.name)"
             gameState = .listening
         case .listening:
             if roundNumber == numberOfRounds {
                 gameState = .finished
-                gameText = "Finished!"
+                gameText = "Score \(correctAnswers)/\(numberOfRounds)"
                 if answeredCorrectly { correctAnswers += 1}
                 return
             } else {
@@ -80,7 +80,13 @@ class GameController: ObservableObject {
 
     func nextQuestion() {
         roundNumber += 1
-        currentNote = instrument.activeNotes.randomElement()!
+        
+        var availableNotes = instrument.activeNotes
+        if availableNotes.count > 1 {
+            availableNotes.removeAll { $0.num == currentNote.num && $0.accidental == currentNote.accidental}
+        }
+        print(availableNotes)
+        currentNote = availableNotes.randomElement()!
         currentAnswers = generateAnswers(correctAnswer: currentNote.name, possibleAnswers: instrument.noteStrings)
         gameText = "What note is this?"
         if answeredCorrectly { correctAnswers += 1}

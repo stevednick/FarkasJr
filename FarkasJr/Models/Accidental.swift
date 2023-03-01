@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct Accidental: Codable { // Naqtural has nil spriteData which will prevent showing anything. 
+struct Accidental: Codable, Equatable {
+    static func == (lhs: Accidental, rhs: Accidental) -> Bool {
+        return lhs.name == rhs.name
+    }
+    // Natural has nil spriteData which will prevent showing anything.
     
     let name: String
     let spriteData: SpriteData?

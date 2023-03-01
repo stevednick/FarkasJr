@@ -34,14 +34,7 @@ struct Instrument: Codable, Identifiable {
         return notesToReturn
     }
     
-    var availableFingerings: [Fingering] {
-        var fingeringsToReturn = [Fingering]()
-        for note in activeNotes {
-            fingeringsToReturn += fingeringOptions.filter({ $0.num == note.num
-            }).first!.preferredFingerings
-        }
-        return Array(Set(fingeringsToReturn))
-    }
+    let availableFingerings: [Fingering]
     
     var fingeringStrings: [String] {
         return availableFingerings.map { $0.rawValue }
@@ -51,12 +44,13 @@ struct Instrument: Codable, Identifiable {
         return Array(Set(activeNotes.map { $0.name }))
     }
     
-    init(id: UUID = UUID(), name: String, transposition: Int, fingeringOptions: [FingeringOptions], clef: Clef) {
+    init(id: UUID = UUID(), name: String, transposition: Int, fingeringOptions: [FingeringOptions], clef: Clef, availableFingerings: [Fingering]) {
         self.id = id
         self.name = name
         self.transposition = transposition
         self.fingeringOptions = fingeringOptions
         self.clef = clef
+        self.availableFingerings = availableFingerings
         self.notes = getNoteList()
     }
     
@@ -102,7 +96,8 @@ extension Instrument {
             FingeringOptions(num: 16, preferredFingerings: [.open]), // E
             
         ],
-        clef: .treble)
+                          clef: .treble,
+                          availableFingerings: [.open, .first, .second, .third, .firstAndSecond, .secondAndThird, .firstAndThird, .firstSecondAndThird])
     }
     static var hornBb: Instrument {
         return Instrument(name: "Bb Horn", transposition: 7, fingeringOptions: [
@@ -120,7 +115,7 @@ extension Instrument {
             FingeringOptions(num: 4, preferredFingerings: [.second]), // E 1&2 added for testing.
             FingeringOptions(num: 5, preferredFingerings: [.open]), // F
             FingeringOptions(num: 6, preferredFingerings: [.firstAndSecond]), // F#
-            FingeringOptions(num: 7, preferredFingerings: [.first]), //G
+            FingeringOptions(num: 7, preferredFingerings: [.first, .firstAndThird]), //G
             FingeringOptions(num: 8, preferredFingerings: [.secondAndThird]), // G#
             FingeringOptions(num: 9, preferredFingerings: [.firstAndSecond, .third]), // A
             FingeringOptions(num: 10, preferredFingerings: [.first]), // Bb
@@ -132,7 +127,8 @@ extension Instrument {
             FingeringOptions(num: 16, preferredFingerings: [.second]), // E 1&2 added for testing.
             FingeringOptions(num: 17, preferredFingerings: [.open]), // F
         ],
-        clef: .treble)
+                          clef: .treble,
+                          availableFingerings: [.open, .first, .second, .third, .firstAndSecond, .secondAndThird, .firstAndThird, .firstSecondAndThird])
     }
     static var initialData: [Instrument] = [.hornF, .hornBb]
 }

@@ -12,9 +12,9 @@ enum Fingering: String, Codable, Equatable {
     case open = "0"
     case second = "2"
     case first = "1"
-    case firstAndSecond = "12"
+    case firstAndSecond = "1+2"
     case third = "3"
-    case secondAndThird = "23"
-    case firstAndThird = "13"
-    case firstSecondAndThird = "123"
+    case secondAndThird = "2+3"
+    case firstAndThird = "1+3"
+    case firstSecondAndThird = "1+2+3"
 }

@@ -9,13 +9,13 @@ import Foundation
 
 struct NoteFormationData {
     
-    var name: String
-    var num: Int
-    var pos: Int
-    var accidental: Accidental
-    var level: Int
+    let name: String
+    let num: Int
+    let pos: Int
+    let accidental: Accidental
+    let level: Int
     
-    init(name: String, num: Int, pos: Int, accidental: Accidental, level: Int) {
+    init(name: String, num: Int, pos: Int, accidental: Accidental, level: Int, an: Bool = false) {
         self.name = name
         self.num = num
         self.pos = pos
