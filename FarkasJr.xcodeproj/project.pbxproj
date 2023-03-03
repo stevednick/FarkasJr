@@ -17,8 +17,6 @@
 		C528514529A2C7DB00DA5DA5 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C528514429A2C7DB00DA5DA5 /* ArrowView.swift */; };
 		C528514729A7D8C700DA5DA5 /* NoteSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C528514629A7D8C700DA5DA5 /* NoteSelectorView.swift */; };
 		C52EF6CF29A8FD2400D708A5 /* NoteMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52EF6CE29A8FD2400D708A5 /* NoteMenuView.swift */; };
-		C548358E299133A000B52FE3 /* JobListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C548358D299133A000B52FE3 /* JobListView.swift */; };
-		C548359129924D8500B52FE3 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = C548359029924D8500B52FE3 /* Job.swift */; };
 		C54835932992998D00B52FE3 /* Fingering.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835922992998C00B52FE3 /* Fingering.swift */; };
 		C54835952992A1C900B52FE3 /* NoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835942992A1C900B52FE3 /* NoteStore.swift */; };
 		C54835972992A21400B52FE3 /* Clef.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835962992A21400B52FE3 /* Clef.swift */; };
@@ -58,8 +56,6 @@
 		C528514629A7D8C700DA5DA5 /* NoteSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSelectorView.swift; sourceTree = "<group>"; };
 		C52EF6CE29A8FD2400D708A5 /* NoteMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMenuView.swift; sourceTree = "<group>"; };
 		C52EF6D029A9DB5900D708A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		C548358D299133A000B52FE3 /* JobListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListView.swift; sourceTree = "<group>"; };
-		C548359029924D8500B52FE3 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		C54835922992998C00B52FE3 /* Fingering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fingering.swift; sourceTree = "<group>"; };
 		C54835942992A1C900B52FE3 /* NoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStore.swift; sourceTree = "<group>"; };
 		C54835962992A21400B52FE3 /* Clef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clef.swift; sourceTree = "<group>"; };
@@ -105,7 +101,6 @@
 				C54835A82995AEBB00B52FE3 /* ErrorView.swift */,
 				C54835BC29994E2600B52FE3 /* HomeScreenView.swift */,
 				C54835BA2998D7FD00B52FE3 /* NoteDisplayView.swift */,
-				C548358D299133A000B52FE3 /* JobListView.swift */,
 				C5285134299EB27200DA5DA5 /* WelcomeView.swift */,
 				C5285137299FB76D00DA5DA5 /* GameView.swift */,
 				C528514029A0FACF00DA5DA5 /* AnswerButton.swift */,
@@ -131,7 +126,6 @@
 		C548358F29924D7300B52FE3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C548359029924D8500B52FE3 /* Job.swift */,
 				C54835922992998C00B52FE3 /* Fingering.swift */,
 				C54835942992A1C900B52FE3 /* NoteStore.swift */,
 				C54835962992A21400B52FE3 /* Clef.swift */,
@@ -295,7 +289,6 @@
 				C524A4AA29A8F689006FDB95 /* FingeringPicker.swift in Sources */,
 				C54835A52994137E00B52FE3 /* DataController.swift in Sources */,
 				C528514729A7D8C700DA5DA5 /* NoteSelectorView.swift in Sources */,
-				C548358E299133A000B52FE3 /* JobListView.swift in Sources */,
 				C52EF6CF29A8FD2400D708A5 /* NoteMenuView.swift in Sources */,
 				C5F4DEF6299D1D340099D2FB /* GameData.swift in Sources */,
 				C54835952992A1C900B52FE3 /* NoteStore.swift in Sources */,
@@ -305,7 +298,6 @@
 				C54835932992998D00B52FE3 /* Fingering.swift in Sources */,
 				C5285135299EB27200DA5DA5 /* WelcomeView.swift in Sources */,
 				C54835A12993C7AD00B52FE3 /* FingeringOptions.swift in Sources */,
-				C548359129924D8500B52FE3 /* Job.swift in Sources */,
 				C54835A92995AEBB00B52FE3 /* ErrorView.swift in Sources */,
 				C5285138299FB76D00DA5DA5 /* GameView.swift in Sources */,
 				C54835BB2998D7FD00B52FE3 /* NoteDisplayView.swift in Sources */,

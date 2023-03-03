@@ -11,7 +11,7 @@ struct WelcomeView: View {
     
     @Environment(\.dismiss) private var dismiss
     let cornerRadius: CGFloat = 15
-    let noteDisplaySize = CGSize(width: 150, height: 100)
+    let noteDisplaySize = CGSize(width: 150, height: 150)
     
     var body: some View {
         NavigationView {

@@ -23,8 +23,8 @@ class GameController: ObservableObject {
     
     let instrument: Instrument
     
-    var answeredCorrectly = true
-    var correctAnswers = -1
+    var answeredCorrectly = false
+    var correctAnswers = 0
     let numberOfRounds = GameData.gameDuration
     var noteSoundingNum: Int { currentNote.num - instrument.transposition }
     let audioController = AudioController()
@@ -50,7 +50,13 @@ class GameController: ObservableObject {
     }
     
     // MARK: - State Machine
-
+    
+    func restart() {
+        roundNumber = 0
+        nextQuestion()
+        correctAnswers = 0
+        gameState = .checkingNote
+    }
     
     func nextState() {
         switch gameState {
@@ -59,20 +65,21 @@ class GameController: ObservableObject {
             currentAnswers = generateAnswers(correctAnswer: instrument.getFingeringString(num: currentNote.num) , possibleAnswers: instrument.fingeringStrings)
             gameText = "What fingering is this \(currentNote.name)"
         case .checkingFingering:
-            gameText = "Play a \(currentNote.name)"
+            gameText = "Play this \(currentNote.name)"
+            recentPlayedNotes = []
             gameState = .listening
         case .listening:
             if roundNumber == numberOfRounds {
                 gameState = .finished
-                gameText = "Score \(correctAnswers)/\(numberOfRounds)"
                 if answeredCorrectly { correctAnswers += 1}
+                gameText = "Score \(correctAnswers)/\(numberOfRounds)"
                 return
             } else {
                 nextQuestion()
                 gameState = .checkingNote
             }
         case .finished:
-            return
+            restart()
         }
     }
 
@@ -85,7 +92,6 @@ class GameController: ObservableObject {
         if availableNotes.count > 1 {
             availableNotes.removeAll { $0.num == currentNote.num && $0.accidental == currentNote.accidental}
         }
-        print(availableNotes)
         currentNote = availableNotes.randomElement()!
         currentAnswers = generateAnswers(correctAnswer: currentNote.name, possibleAnswers: instrument.noteStrings)
         gameText = "What note is this?"

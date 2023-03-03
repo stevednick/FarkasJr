@@ -34,6 +34,6 @@ struct NoteDisplayView: View {
 
 struct NoteDisplayView_Previews: PreviewProvider {
     static var previews: some View {
-        NoteDisplayView(note: .constant(Note(name: "C#", num: 1, pos: -6, accidental: .natural, level: 1)), instrument: .hornF, size: CGSize(width: 300, height: 300))
+        NoteDisplayView(note: .constant(Note(name: "C#", num: 1, pos: -6, accidental: .natural, level: 1)), instrument: .tromboneBassClef, size: CGSize(width: 300, height: 300))
     }
 }
