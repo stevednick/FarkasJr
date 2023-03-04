@@ -27,7 +27,8 @@ struct FarkasJrApp: App {
                     }
                 }
             }
-            .navigationViewStyle(.stack)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationViewStyle(StackNavigationViewStyle())
             .task {
                 do {
                     dataController.instruments = try await DataController.load()
@@ -37,8 +38,7 @@ struct FarkasJrApp: App {
                 }
             }
             .sheet(item: $errorWrapper, onDismiss: {
-                dataController.instruments = [Instrument.hornF]
-                //store.scrums = DailyScrum.sampleData
+                dataController.instruments = Instrument.initialData
             }) { wrapper in
                 ErrorView(errorWrapper: wrapper)
             }

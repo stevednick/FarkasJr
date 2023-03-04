@@ -38,6 +38,7 @@
 		C54835C7299ACE7900B52FE3 /* PlayedNoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54835C6299ACE7900B52FE3 /* PlayedNoteData.swift */; };
 		C54835CA299ACFF400B52FE3 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = C54835C9299ACFF400B52FE3 /* AudioKitEX */; };
 		C54835CD299AD03600B52FE3 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = C54835CC299AD03600B52FE3 /* SoundpipeAudioKit */; };
+		C54B554D29B3E5BF005C4659 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54B554C29B3E5BF005C4659 /* OptionsView.swift */; };
 		C569A32E299130A700E99884 /* FarkasJrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569A32D299130A700E99884 /* FarkasJrApp.swift */; };
 		C569A332299130A900E99884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569A331299130A900E99884 /* Assets.xcassets */; };
 		C569A335299130A900E99884 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569A334299130A900E99884 /* Preview Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		C54835BC29994E2600B52FE3 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		C54835C4299ACDDA00B52FE3 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		C54835C6299ACE7900B52FE3 /* PlayedNoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedNoteData.swift; sourceTree = "<group>"; };
+		C54B554C29B3E5BF005C4659 /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
 		C569A32A299130A700E99884 /* FarkasJr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarkasJr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C569A32D299130A700E99884 /* FarkasJrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarkasJrApp.swift; sourceTree = "<group>"; };
 		C569A331299130A900E99884 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,17 +100,18 @@
 		C5285136299FB6C500DA5DA5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C54835A82995AEBB00B52FE3 /* ErrorView.swift */,
-				C54835BC29994E2600B52FE3 /* HomeScreenView.swift */,
-				C54835BA2998D7FD00B52FE3 /* NoteDisplayView.swift */,
-				C5285134299EB27200DA5DA5 /* WelcomeView.swift */,
-				C5285137299FB76D00DA5DA5 /* GameView.swift */,
 				C528514029A0FACF00DA5DA5 /* AnswerButton.swift */,
 				C528514429A2C7DB00DA5DA5 /* ArrowView.swift */,
-				C528514629A7D8C700DA5DA5 /* NoteSelectorView.swift */,
-				C524A4A729A83654006FDB95 /* NoteNumView.swift */,
+				C54835A82995AEBB00B52FE3 /* ErrorView.swift */,
 				C524A4A929A8F689006FDB95 /* FingeringPicker.swift */,
+				C5285137299FB76D00DA5DA5 /* GameView.swift */,
+				C54835BC29994E2600B52FE3 /* HomeScreenView.swift */,
+				C54835BA2998D7FD00B52FE3 /* NoteDisplayView.swift */,
 				C52EF6CE29A8FD2400D708A5 /* NoteMenuView.swift */,
+				C524A4A729A83654006FDB95 /* NoteNumView.swift */,
+				C528514629A7D8C700DA5DA5 /* NoteSelectorView.swift */,
+				C54B554C29B3E5BF005C4659 /* OptionsView.swift */,
+				C5285134299EB27200DA5DA5 /* WelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,20 +129,20 @@
 		C548358F29924D7300B52FE3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C54835922992998C00B52FE3 /* Fingering.swift */,
-				C54835942992A1C900B52FE3 /* NoteStore.swift */,
-				C54835962992A21400B52FE3 /* Clef.swift */,
 				C54835982992F72D00B52FE3 /* Accidental.swift */,
-				C548359A2992FAD000B52FE3 /* NoteFormationData.swift */,
-				C548359C2993042800B52FE3 /* Note.swift */,
-				C548359E2993C65B00B52FE3 /* Instrument.swift */,
-				C54835A02993C7AD00B52FE3 /* FingeringOptions.swift */,
-				C54835A22993DBE500B52FE3 /* NoteByNum.swift */,
-				C54835A62995AE7E00B52FE3 /* ErrorWrapper.swift */,
-				C54835B82998416F00B52FE3 /* SpriteData.swift */,
-				C54835C6299ACE7900B52FE3 /* PlayedNoteData.swift */,
-				C5F4DEF5299D1D340099D2FB /* GameData.swift */,
 				C528513B299FCB2E00DA5DA5 /* Answer.swift */,
+				C54835962992A21400B52FE3 /* Clef.swift */,
+				C54835A62995AE7E00B52FE3 /* ErrorWrapper.swift */,
+				C54835922992998C00B52FE3 /* Fingering.swift */,
+				C54835A02993C7AD00B52FE3 /* FingeringOptions.swift */,
+				C5F4DEF5299D1D340099D2FB /* GameData.swift */,
+				C548359E2993C65B00B52FE3 /* Instrument.swift */,
+				C548359C2993042800B52FE3 /* Note.swift */,
+				C54835A22993DBE500B52FE3 /* NoteByNum.swift */,
+				C548359A2992FAD000B52FE3 /* NoteFormationData.swift */,
+				C54835942992A1C900B52FE3 /* NoteStore.swift */,
+				C54835C6299ACE7900B52FE3 /* PlayedNoteData.swift */,
+				C54835B82998416F00B52FE3 /* SpriteData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				C54835C7299ACE7900B52FE3 /* PlayedNoteData.swift in Sources */,
 				C54835972992A21400B52FE3 /* Clef.swift in Sources */,
 				C548359B2992FAD000B52FE3 /* NoteFormationData.swift in Sources */,
+				C54B554D29B3E5BF005C4659 /* OptionsView.swift in Sources */,
 				C54835992992F72D00B52FE3 /* Accidental.swift in Sources */,
 				C524A4A829A83654006FDB95 /* NoteNumView.swift in Sources */,
 				C548359D2993042800B52FE3 /* Note.swift in Sources */,
@@ -427,7 +431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"FarkasJr/Preview Content\"";
 				DEVELOPMENT_TEAM = V4DPA4RA3P;
 				ENABLE_PREVIEWS = YES;
@@ -446,7 +450,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.weststreetgamestudios.FarkasJr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -461,7 +465,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"FarkasJr/Preview Content\"";
 				DEVELOPMENT_TEAM = V4DPA4RA3P;
 				ENABLE_PREVIEWS = YES;
@@ -480,7 +484,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.weststreetgamestudios.FarkasJr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

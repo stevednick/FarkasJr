@@ -51,23 +51,21 @@ struct HomeScreenView: View {
         //.navigationViewStyle(.stack)
         .toolbar(content: {
             ToolbarItem(placement: .navigationBarLeading) {
-                NavigationLink("Note Selection") {
-                    NoteMenuView(instruments: $instruments, saveAction: self.saveAction, currentInstrument: currentInstrument)
-                }
+                Text(instruments[currentInstrument].name)
+                    .fontWeight(.semibold)
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                Picker("Select an Instrument", selection: $currentInstrument) {
-                    ForEach(instruments.indices, id: \.self) { index in
-                        Text(instruments[index].name).tag(index)
-                    }
+                NavigationLink(destination: OptionsView(currentInstrument: $currentInstrument, instruments: $instruments, saveAction: saveAction)){
+                    Text("Options")
                 }
-                .onChange(of: currentInstrument) { newValue in
-                    GameData.currentInstrument = newValue
-                }
+                .navigationViewStyle(.stack)
             }
         })
         .onAppear {
             noteToDisplay = instruments[currentInstrument].activeNotes.randomElement() ?? noteToDisplay
+        }
+        .onChange(of: currentInstrument) { newValue in
+            GameData.currentInstrument = newValue
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationViewStyle(.stack)

@@ -25,7 +25,7 @@ struct NoteMenuView: View {
                 }
             }
         }
-        .navigationTitle(Text("Note Selection"))
+        .navigationTitle("Note Selection")
         .navigationViewStyle(.stack)
         .frame(maxWidth: 500)
     }
